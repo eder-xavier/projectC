@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kecb Catalog</title>
+    <link rel="stylesheet" href="{% static 'css/home/estruturamain.css'' %}">
+    
+
+
+</head>
+<body>
+    <header>
+        <nav>
+
+          <ul class="nav-list">
+
+            <li>
+              <p> 
+                <a class="pnames" href="{% url 'home' %}">Catalog</a>
+              </p>
+            </li>
+            
+          <!-- 
+            <li >
+              <p>
+                <a class="pnames" href="{% url 'article' %}">Article</a>
+              </p>
+            </li>
+          -->
+
+          </ul>
+
+        </nav>
+    </header>
+
+  <main>
+
+    <section>
+      <article>
+          <h1 id="logoname">Eclipsing binary catalog (Kepler + TESS)</h1>
+          <h3 id="logoname3">Last update 8/4/2023</h3>
+      </article>
+
+      <article class="form_box">
+        <form action="{% url 'home' %}" method="get">
+          {% csrf_token %}
+
+          <input type="text" name="kic" id="kic" placeholder="KIC/EPIC">
+          <button type="submit" class="btns">Search</button>
+
+        </form>
+      </article>
+
+    </section>
+
+
+    {% block content %}
+    {% endblock %}
+
+  </main>
+
+</body>
+
+
+
+
+</html>
