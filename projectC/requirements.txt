@@ -162,8 +162,6 @@ python-dotenv==1.0.0
 python3-openid==3.2.0
 pytz==2022.7.1
 pyvo==1.4.1
-pywin32==304
-pywin32-ctypes==0.2.0
 PyYAML==6.0.1
 pyzmq==23.2.0
 rapidfuzz==2.15.1
@@ -204,6 +202,7 @@ tzdata==2023.3
 uncertainties==3.1.7
 urllib3==1.26.10
 vine==5.0.0
+virtualenv==20.24.2
 wcwidth==0.2.5
 webencodings==0.5.1
 whitenoise==6.4.0
