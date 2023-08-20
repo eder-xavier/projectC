@@ -162,7 +162,6 @@ python-dotenv==1.0.0
 python3-openid==3.2.0
 pytz==2022.7.1
 pyvo==1.4.1
-PyYAML==6.0.1
 pyzmq==23.2.0
 rapidfuzz==2.15.1
 redis==4.5.5
