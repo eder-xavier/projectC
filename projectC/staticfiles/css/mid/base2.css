@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+  
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22)); 
+    height: 8vh;
+    color: rgb(235, 235, 235);
+}
+  
+.voltar{
+    font-size: 20px;
+}
+
+.pnames{
+    color: rgb(235, 235, 235);
+}
+
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+  
+#l {
+    padding: 5px;
+} 
+
+#pageN{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+    /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
+    color: rgb(0, 0, 16);
+    text-align: justify;
+}
+
+section{
+    margin: 20px;
+}
+
+.poc{
+    font-size: 22px;
+    margin-left: 14vw;
+}
+
+table{
+    border-collapse: collapse;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+}
+
+#container { /*Transbordagem da tela*/
+    position: relative;
+    left: -0.6vw;
+    margin: 20px;
+    align-items: center;
+}
+
+
+
+td, th{
+    border: 1px solid rgb(255, 255, 255);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+
+thead{
+  color: rgb(0, 0, 16);
+  background-color: rgb(205, 205, 205);
+  font-size: 17px;
+}
+
+.nada{
+  background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+  width: 0.5px;
+  border: 0px;
+}
+
+
+.sdata{
+  width: 300px;
+}
+
+tbody > tr:nth-child(odd){ /*EFEITO ZEBRADO*/
+  background-color: rgb(233, 233, 233);
+}
+
+tbody > tr:nth-child(even){ /*EFEITO ZEBRADO*/
+  background-color: rgb(205, 205, 205);
+}
+
+td{
+    text-align: center;
+}
+
+caption{
+  font-size: 18px;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+#seqfigsh1{
+  font-size: 24px;
+  margin-bottom: 10px;
+
+}
+
+.seqfigsp{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+
