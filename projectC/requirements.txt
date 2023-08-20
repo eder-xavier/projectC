@@ -160,8 +160,6 @@ PyQt5-sip==12.11.0
 python-dateutil==2.8.2
 python-dotenv==1.0.0
 python3-openid==3.2.0
-pytz==2022.7.1
-pyzmq==23.2.0
 rapidfuzz==2.15.1
 redis==4.5.5
 referencing==0.30.0
