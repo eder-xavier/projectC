@@ -53,7 +53,6 @@ PyJWT==2.7.0
 pymc3==3.11.5
 pyodbc==4.0.35
 pyOpenSSL==23.1.1
-pyparsing==3.0.9
 PyPika==0.48.9
 pypika-tortoise==0.1.6
 pyproject_hooks==1.0.0
