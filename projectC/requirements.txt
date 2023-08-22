@@ -61,7 +61,6 @@ django-jsonfield-backport==1.0.5
 django-notifs==4.0.0
 django-templated-mail==1.1.1
 djangorestframework==3.14.0
-djangorestframework-jwt==1.11.0
 djangorestframework-simplejwt==5.2.2
 djoser==2.2.0
 dulwich==0.21.5
