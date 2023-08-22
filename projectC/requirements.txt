@@ -179,7 +179,6 @@ semver
 service-identity
 setuptools-scm
 shellingham
-simplejson
 six
 social-auth-app-django
 social-auth-core
