@@ -177,7 +177,6 @@ scikit-learn
 scipy
 semver
 service-identity
-setuptools-scm
 shellingham
 six
 social-auth-app-django
