@@ -91,7 +91,6 @@ ipython
 iso8601
 jaraco.classes
 jedi
-Jinja
 joblib
 jsonschema
 jsonschema-specifications
