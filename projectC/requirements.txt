@@ -61,8 +61,8 @@ django-jsonfield-backport==1.0.5
 django-notifs==4.0.0
 django-templated-mail==1.1.1
 djangorestframework==3.14.0
-djangorestframework-simplejwt==5.2.2
-djangorestframework-jwt==1.11.0
+djangorestframework-simplejwt
+djangorestframework-jwt
 djoser==2.2.0
 dulwich==0.21.5
 emcee==3.1.4
@@ -148,7 +148,7 @@ pygubu==0.29
 PyHamcrest==2.0.4
 pyinstaller==5.7.0
 pyinstaller-hooks-contrib==2022.15
-PyJWT==2.0.0
+PyJWT
 pymc3==3.11.5
 pyodbc==4.0.35
 pyOpenSSL==23.1.1
