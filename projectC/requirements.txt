@@ -148,7 +148,7 @@ pygubu==0.29
 PyHamcrest==2.0.4
 pyinstaller==5.7.0
 pyinstaller-hooks-contrib==2022.15
-PyJWT>=1.5.2
+PyJWT==1.7.1
 pymc3==3.11.5
 pyodbc==4.0.35
 pyOpenSSL==23.1.1
