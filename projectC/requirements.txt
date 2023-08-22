@@ -176,7 +176,7 @@ rpds-py
 scikit-learn
 scipy
 semver
-service-identity
+service-identity==21.1.0
 shellingham
 six
 social-auth-app-django
