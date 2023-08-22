@@ -164,8 +164,6 @@ python-dotenv
 python3-openid
 pytz
 pyvo
-pywin32
-pywin32-ctypes
 PyYAML
 pyzmq
 rapidfuzz
