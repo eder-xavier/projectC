@@ -69,16 +69,19 @@
   }
 
   nav {
-    display: flex;
+    display: block;
     text-align: left;
     align-items: center;
     font-family: sans-serif;
-    height: 8vh;
 
+    height: 8vh;
+    width: 100vw;
+
+    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
     backface-visibility: visible;
     background-repeat: none;
-    background-size: cover;
-    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+    background-size: contain;
+    
 
     
   }
@@ -101,12 +104,15 @@
   } 
 
   main {
+    display: block;
+    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22)); 
     backface-visibility: visible;
     background-repeat: none;
     background-size: cover;
-    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22)); 
+    
     /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
     height: 92vh;
+    width: 100vw;
     /*overflow: hidden;*/
   }
 
