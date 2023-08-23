@@ -13,6 +13,7 @@ a {
 }
 
 nav {
+    overflow: visible;
     display: flex;
     text-align: left;
     align-items: center;
@@ -61,6 +62,8 @@ body {
   backface-visibility: visible;
   background-repeat: none;
   background-size: cover;
+
+  overflow: visible;
 
     background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
     /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
