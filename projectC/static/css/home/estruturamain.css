@@ -98,12 +98,12 @@
     background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22)); 
     /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
     height: 92vh;
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
 
 
   #container { /*Transbordagem da tela*/
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: absolute;
     left: -0.1vw;
     margin: 20px;
