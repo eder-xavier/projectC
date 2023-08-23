@@ -13,8 +13,8 @@ a {
 }
 
 nav {
+    display: flex;
     overflow: visible;
-    display: block;
     text-align: left;
     align-items: center;
     font-family: sans-serif;
