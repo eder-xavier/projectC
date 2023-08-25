@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kecb Catalog</title>
+    <title>Kepler + TESS Catalog</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/home/estruturamain.css'' %}">
     
 
@@ -36,8 +36,7 @@
         </nav>
     </header>
 
-  <main>
-
+    <main> 
     <section>
       <article>
           <h1 id="logoname">Eclipsing binary catalog (Kepler + TESS)</h1>
@@ -48,19 +47,19 @@
         <form action="{% url 'home' %}" method="get">
           {% csrf_token %}
 
-          <input type="text" name="kic" id="kic" placeholder="KIC/EPIC">
+          <input type="text" name="kic" id="kic" placeholder="KIC">
           <button type="submit" class="btns">Search</button>
 
         </form>
       </article>
 
     </section>
-
+  
 
     {% block content %}
     {% endblock %}
-
   </main>
+
 
 </body>
 

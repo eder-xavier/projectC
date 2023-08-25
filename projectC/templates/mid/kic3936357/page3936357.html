@@ -25,7 +25,7 @@
                         <th class="tdata" colspan="9">Third Body Pameters</th>
                     </tr>
                     <tr>
-                        <th>KIC/EPIC</th>
+                        <th>KIC</th>
                         <th>period</th>
                         <th>bjd0</th>
                         <th class="nada"></th>
@@ -42,7 +42,7 @@
                     {% for dado in lista_pagina %}
                     <tr>
                         <tr>
-                            <td class="KIC/EPIC"><a href="{% url 'pagina_objetos' kic=dado.kic %}">{{ dado.kic }}</a></td>
+                            <td class="KIC"><a href="{% url 'pagina_objetos' kic=dado.kic %}">{{ dado.kic }}</a></td>
                             <td class="Period">{{ dado.Period }}</td>
                             <td class="bjd0">{{ dado.bjd0 }}</td>
                             <td class="nada"></td>
