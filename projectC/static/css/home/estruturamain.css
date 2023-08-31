@@ -114,13 +114,15 @@
     left: -0.1vw;
     margin: 18px;
     align-items: center;
+    overflow-x: auto;
   }
 
 table{
     border-collapse: collapse;
     align-items: center;
     text-align: center;
-    width: 1500px;
+    width: 100%;
+    
 
 }
 
@@ -191,6 +193,36 @@ caption{
   opacity: 0.7;
 }
 
+@media screen and (max-width: 999px) {
+  /* Estilos para tamanhos de tela menores */
 
+  th{
+      font-size: 14px;
+  }
+  td{
+      font-size: 13px;
+  }
+
+  .table-responsive {
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .table-responsive > .table {
+      margin-bottom: 0;
+  }
+  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .table > tfoot > tr > th,
+  .table-responsive > .table > thead > tr > td,
+  .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .table > tfoot > tr > td {
+
+      white-space: nowrap;
+      padding: 10px; /* Adicione padding aqui */
+      text-align: center; /* Centralize o conteúdo */
+  }
+}
 
 
