@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %}
+{% extends 'home/base3.html' %}
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
@@ -11,7 +11,42 @@
     <link rel="stylesheet" type="text/css" href="{% static 'static/css/home/estruturamain.css' %}">
 </head>
 <body>
-    Artigo
+    <main>
+        <section id="article">
+            <h1>A Detailed Look Through the Catalog</h1>
+            
+            <article>Examining this extensive catalog of over 230 binary systems,
+            with and without cyclic variations, reveals a wealth of fascinating parameters.
+            Each entry in this catalog provides a window into the unique characteristics and
+            secrets of these binary star systems. Let's take a closer look at the parameters 
+            that define these systems:</article>
+            <br>
+            
+            <ul>
+            <li><strong>KIC (Kepler Identifier):</strong> This serves as the Kepler identifier, offering a unique reference for each binary system, connecting us to an individual story of study and observation.</li>
+            <br>
+            <li><strong>Period of Binary:</strong> The binary period represents the time it takes for the two stars to orbit around each other, a fundamental measure defining the system's dynamics.</li>
+            <br>
+            <li><strong>Epoch:</strong> The epoch provides a time reference point for observations and calculations, crucial for studying temporal variations.</li>
+            <br>
+            <li><strong>Third Body Period:</strong> Some binary systems include a third celestial body. This parameter reveals the orbital period of the third body around the binary system.</li>
+            <br>
+            <li><strong>Third Body Eccentricity:</strong> Eccentricity describes how elliptical or circular the orbit of the third body is around the binary system.</li>
+            <br>
+            <li><strong>Projected Semi-Major Axis of the Third Body:</strong> This parameter indicates the size of the third body's orbit projected onto the celestial plane, giving insight into its proximity to the binary system.</li>
+            <br>
+            <li><strong>Third Body Inclination:</strong> The inclination of the third body's orbit tells us the angle at which it is tilted relative to the celestial plane, crucial for understanding the system's geometry.</li>
+            <br>
+            <li><strong>Angular Coefficient of the Adjusted Linear Ephemeris (A):</strong> Part of an equation describing changes in orbital period over time, helping predict the future behavior of the system.</li>
+            <br>
+            <li><strong>Linear Coefficient of the Adjusted Linear Ephemeris (B):</strong> This coefficient is also part of the linear ephemeris equation and plays a key role in calculating orbital changes.</li>
+            <br>
+            </ul>
+            <br>
+            <article>Each of these parameters represents a piece of the puzzle in understanding these complex binary systems. While exploring this catalog, astronomers and researchers have the opportunity to unlock the mysteries
+            of stellar evolution, gravitational interactions, and celestial orbits. It's an exciting journey that allows us to delve into the wonders of the cosmos and expand our knowledge of the universe that surrounds us.</article>
+        </section>
+    </main>
 </body>
 </html>
 {% endblock %}

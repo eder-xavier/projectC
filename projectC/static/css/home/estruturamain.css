@@ -1,10 +1,31 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
   * {
     margin: 0;
     padding: 0;
     
 
+  }
+
+  body{
+    background-size: auto;
+    overflow-y: visible;
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  #article{
+    max-width: 80vw;
+    font-size: 18px;
+    line-height: 1.6;
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: justify;
+    padding: 50px;
   }
 
   html{
@@ -16,27 +37,58 @@
     transition: 0.3s;
   }
 
+  nav {
+    min-width: max-content;
+    text-align: left;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+    height: 8vh;
+    margin: 0;
+  }
+
+
+  .nav-list {
+    list-style: none;
+  }
   
+  .nav-list li {
+    letter-spacing: 3px;
+  }
+
   .pnames{
-    position: absolute;
-    padding-top: 20px;
+    position: relative;
     color: rgb(0, 0, 16);
+  }
+
+  #articlename{
+
+    left: 8vw;
+  }
+
+  #homename{
+    padding: 20px;
+    top: 2.5vh;
+  }
+
+  .mainnames{
+    font-family: 'Playfair Display SC', serif;
   }
   
   #logoname{
-    font-size: 45px;
+    font-size: 35px;
     padding: 15px;
     padding-left: 40px;
   }
 
   #logoname2{
-    font-size: 35px;
-    margin: 15px;
+    font-size: 20px;
+    margin: 10px;
     margin-left: 40px;
   }
 
   #logoname3{
-    font-size: 25px;
+    font-size: 20px;
     margin: 15px;
     margin-left: 40px;
   }
@@ -46,6 +98,7 @@
     margin-left: 40px;
     font-family: sans-serif;
   }
+
 
   input{
     color: rgb(0, 0, 16);
@@ -76,45 +129,27 @@
     color: rgb(233, 233, 233);
   }
 
-  nav {
-    min-width: max-content;
-    text-align: left;
-    align-items: center;
-    font-family: sans-serif;
-    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
-    height: 8vh;
-    margin: 0;
-  }
-  
 
-
-
-  .nav-list {
-    list-style: none;
-  }
-  
-  .nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
-  }
   
   #l {
     padding: 5px;
   } 
 
   main {
+    min-height: max-content;
     margin: 0;
     background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22));
     /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
-    height: 92vh;
   }
 
 
   #container { /*Transbordagem da tela*/
     left: -0.1vw;
-    margin: 18px;
+    padding: 18px;
     align-items: center;
     overflow-x: auto;
+    min-height: max-content;
+    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22));
   }
 
 table{

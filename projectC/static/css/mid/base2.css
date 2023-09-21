@@ -35,14 +35,25 @@ nav {
     list-style: none;
 }
 
-
-
 .nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
-    padding-top: 20px ;
+  letter-spacing: 3px;
 }
-  
+
+.pnames{
+  position: relative;
+  color: rgb(220, 220, 255);
+}
+
+#articlename{
+
+  left: 8vw;
+}
+
+#homename{
+  padding: 20px;
+  top: 2.5vh;
+}
+
 #l {
     padding: 5px;
 } 

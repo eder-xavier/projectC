@@ -27,7 +27,7 @@ a {
   }
 
   .pnames{
-    position: absolute;
+    position: relative;
     padding-top: 20px;
     color: rgb(0, 0, 16);
   }

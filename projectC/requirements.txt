@@ -59,7 +59,9 @@ Django
 django-cloudinary-storage
 django-cors-headers
 django-heroku
+django-humanize
 django-jsonfield-backport
+django-multiupload
 django-notifs
 django-templated-mail
 djangorestframework
@@ -99,6 +101,7 @@ jupyter-core
 keyring
 kiwisolver
 kombu
+libmagic
 lief
 lmfit
 lockfile
@@ -161,6 +164,7 @@ PyQt5-Qt5
 PyQt5-sip
 python-dateutil
 python-dotenv
+python-magic
 python3-openid
 pytz
 pyvo
