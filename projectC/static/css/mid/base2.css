@@ -151,5 +151,19 @@ caption{
   margin-bottom: 10px;
 }
 
+/* SCROll */
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: white;
+  
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 16);
+  border-radius: 2px;
+}
 
 
