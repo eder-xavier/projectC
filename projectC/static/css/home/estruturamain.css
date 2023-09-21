@@ -57,11 +57,12 @@
   }
 
   .pnames{
-    position: relative;
+    position: absolute;
     color: rgb(0, 0, 16);
   }
 
   #articlename{
+    top: 3vh;
     margin-left: 20px;
     left: 8vw;
   }
@@ -69,7 +70,6 @@
   #homename{
     margin-left: 15px;
     padding: 20px;
-    top: 2.5vh;
   }
 
   .mainnames{
