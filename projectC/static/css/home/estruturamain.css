@@ -9,6 +9,12 @@
 
   }
 
+  
+  html{
+    min-width: max-content;
+    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22));
+  }
+
   body{
     background-size: auto;
     overflow-y: visible;
@@ -28,9 +34,6 @@
     padding: 50px;
   }
 
-  html{
-    min-width: max-content;
-  }
 
   a {
     text-decoration: none;
@@ -39,6 +42,7 @@
 
   nav {
     min-width: max-content;
+    display: flex;
     text-align: left;
     align-items: center;
     font-family: sans-serif;
@@ -57,19 +61,19 @@
   }
 
   .pnames{
-    position: absolute;
+    position: relative;
     color: rgb(0, 0, 16);
   }
 
-  #articlename{
-    top: 3vh;
-    margin-left: 20px;
-    left: 8vw;
-  }
 
   #homename{
-    margin-left: 15px;
-    padding: 20px;
+    left: 8vw;
+    top: 1.5vh;
+  }
+  #articlename{
+    margin-left: 20px;
+    left: 26vw;
+    bottom: 0.9vh;
   }
 
   .mainnames{
@@ -139,7 +143,7 @@
   main {
     min-height: max-content;
     margin: 0;
-    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22));
+    
     /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
   }
 
@@ -261,6 +265,16 @@ caption{
   }
 }
 
+@media screen and (min-width: 999px) {
+
+  #homename{
+    left: 3vw;
+  }
+  #articlename{
+    left: 9vw;
+  }
+}
+
 /* SCROll */
 
 ::-webkit-scrollbar-track {
@@ -269,7 +283,7 @@ caption{
 ::-webkit-scrollbar {
   width: 7px;
   background-color: white;
-  
+  height: 7px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgb(0, 0, 16);
