@@ -96,6 +96,15 @@
     margin-left: 40px;
     font-family: sans-serif;
   }
+  #kic{
+    padding: 2px; /* Espaçamento interno do campo de entrada de texto */
+    border: 1px solid #ccc; /* Borda com cor cinza */
+    border-radius: 7px; /* Cantos arredondados */
+  }
+
+  .unidades{
+    font-size: 14px;
+  }
 
 
   input{
@@ -106,12 +115,13 @@
   }
 
   .btns{
-    border-radius: 4px;
+    border-radius: 7px;
     font-size: 13.2px;
-    
-    padding: 2px;
+    padding: 4px;
     color: rgb(0, 0, 16);
+    font-weight: bolder;
     background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+
   }
 
   .btns:hover{
