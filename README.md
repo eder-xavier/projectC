@@ -1,4 +1,6 @@
-# BinaryCatalog
+# projectC
+
+BINARY CATALOG
  Catalog with data from 240 binary stellar systems
 
 - Para executar o programa instale as dependencias do " requeirements.txt" 
