@@ -1,0 +1,90 @@
+{% extends 'mid/base2.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mid/base2.css' %}">
+</head>
+<body>
+
+
+    <main> 
+        <section id="container">
+            <!-- Exibir informações do objeto_kic aqui -->
+            <table>
+                <thead>
+                    <tr>
+                        <th class="sdata" colspan="3">Binary Parameters</th>
+                        <th class="nada"></th>
+                        <th class="tdata" colspan="9">Third Body Pameters</th>
+                    </tr>
+                    <tr>
+                        <th>KIC</th>
+                        <th>period</th>
+                        <th>bjd0</th>
+                        <th class="nada"></th>
+                        <th>period</th>
+                        <th>e</th>
+                        <th>a</th>
+                        <th>&omega;</th>
+                        <th>A</th>
+                        <th>B</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    {% for dado in lista_pagina %}
+                    <tr>
+                        <tr>
+                            <td class="KIC/EPIC"><a href="{% url 'pagina_objetos' kic=dado.kic %}">{{ dado.kic }}</a></td>
+                            <td class="Period">{{ dado.Period }}</td>
+                            <td class="bjd0">{{ dado.bjd0 }}</td>
+                            <td class="nada"></td>
+                            <td class="Period_td">{{ dado.Period_td }}</td>
+                            <td class="e">{{ dado.e}}</td>
+                            <td class="a">{{ dado.a }}</td>
+                            <td class="omega">{{ dado.omega }}</td>
+                            <td class="Aa">{{ dado.Aa}}</td>
+                            <td class="Bb">{{ dado.Bb }}</td>
+                        </tr>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        
+
+
+        <section id="imagensobj"> 
+
+            <article>
+                <h1 id="seqfigsh1">Figure Descriptions</h1>
+                <p class="seqfigsp">From left to right and top to bottom:</p>
+                <p class="seqfigsp"> (i) Kepler lightcurve, (ii) TESS lightcurve, (iii) Lomb-Scagle periodogram, </p>
+                <p class="seqfigsp">(iv) String length periodogram, (v) Lightcurve in phase and (vi) O-C Diagram.</p>
+            </article>
+        
+
+            <article>
+                <p><img src="{% static 'img/catalog/objects14/8912468.png' %}" alt="8912468"></p>
+            </article>
+            
+
+        </section>
+
+
+    </main>
+
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepler + TESS Catalog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/catalog/home/estruturamain.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/titan/favicons/favicon.ico' %}" type="image/x-icon">
+    
+
+
+</head>
+<body>
+    <header>
+        <nav>
+
+          <ul class="nav-list">
+
+            <li>
+                <a id="homename" class="pnames" href="{% url 'Capp:home' %}">Catalog</a>
+            </li>
+
+          </ul>
+
+        </nav>
+    </header>
+
+    <main> 
+    <section>
+      <article class="mainnames">
+          <h1 id="logoname">Eclipsing binary catalog (Kepler + TESS)</h1>
+
+          <h2 id="logoname2"> Useful links 
+            <a target="_blank" href="https://sites.google.com/a/lctools.net/lctools/data-sources/kepler-lightcurve-directories">Kepler Light Curve Directories</a>
+             and <a target="_blank" href="https://sites.google.com/a/lctools.net/lctools/data-sources/tess-lightcurve-directories">TESS CTL Light Curve Directories</a>
+          </h2>
+
+          <h3 id="logoname3">Last update 8/4/2023 | Click <a href="/papers/eclipsing_binary_catalog/catalog_home/?page=8">here</a> to be directed to objects without cyclical variation</h3>
+      </article>
+
+      <article class="form_box">
+        <form action="{% url 'Capp:home' %}" method="get">
+          {% csrf_token %}
+
+          <input type="text" name="kic" id="kic" placeholder="KIC">
+          <button type="submit" class="btns">Search</button>
+
+        </form>
+      </article>
+
+    </section>
+  
+  
+    {% block content %}
+    {% endblock %}
+  </main>
+
+
+</body>
+
+
+
+
+</html>

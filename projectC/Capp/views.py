@@ -8,21 +8,11 @@ from .models import DadosGerais
 from django.core.paginator import Paginator
 from . import models
 
-# Create your views here.
-
-
-
-def article(request):
-    return render(request, 'home/article.html')
-
 #################### HOME PAGES
 
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import DadosGerais
-
-# ... outras views ...
+def home0(request):
+    return render(request, 'catalog/home/home.html')
 
 def home(request):
     dados = DadosGerais.objects.all()
@@ -31,11 +21,11 @@ def home(request):
         try:
             id_pesquisa = int(id_pesquisa)
             dado = DadosGerais.objects.get(kic=id_pesquisa)
-            return redirect('pagina_objetos', kic=id_pesquisa)
+            return redirect('Capp:pagina_objetos', kic=id_pesquisa)
         except ValueError:
-            return render(request, 'notf.html')
+            return render(request, 'catalog/notf.html')
         except DadosGerais.DoesNotExist:
-            return render(request, 'notf.html')
+            return render(request, 'catalog/notf.html')
     else:
         itens_por_pagina = 12
         paginator = Paginator(dados, itens_por_pagina)
@@ -52,7 +42,7 @@ def home(request):
         except EmptyPage:
         # Se a página estiver fora do intervalo, exibir a última página
             dados_paginados = paginator.page(paginator.num_pages)
-        return render(request, 'home/home.html', {'dados': dados_paginados})
+    return render(request, 'catalog/home/home.html', {'dados': dados_paginados})
 
 # ...
 
@@ -88,13 +78,14 @@ def pagina_objetos(request, kic):
     # Obtenha o objeto correspondente ao KIC selecionado
     objeto_kic = get_object_or_404(DadosGerais, kic=kic)
 
-    template_name = f'mid/kic{kic}/page{kic}.html'
-    return render(request, template_name, {
+    template_name = f'catalog/mid/kic{kic}/page{kic}.html'
+    context = {
         'lista_pagina': lista_pagina,
         'total_paginas': total_paginas,
         'page_number': page_number,
         'objeto_kic': objeto_kic,
-    })
+    }
+    return render(request, template_name, context)
 
 def pagina_continuacao(request, kic):
     # Obtenha todos os objetos relacionados ao 'kic'
@@ -126,10 +117,14 @@ def pagina_continuacao(request, kic):
     lista_pagina = lista_de_dados[indice_inicial:indice_final]
 
     #template_name = f'mid/kic{kic}/continuacao{kic}.html'
-    template_name = 'home/home2.html'
-    return render(request, template_name, {
+    template_name = 'catalog/home/home2.html'
+
+    context = {
         'lista_pagina': lista_pagina,
         'total_paginas': total_paginas,
         'page_number': page_number,
-    })
+    }
+    return render(request, template_name, context) 
+
+    
 
