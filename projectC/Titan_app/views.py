@@ -6,4 +6,4 @@ def home(request):
     return render(request, 'titan/home/home.html')
 
 def publications(request):
-    return render(request, 'titan/home/publications.html')
+    return render(request, 'titan/mid/publications.html')

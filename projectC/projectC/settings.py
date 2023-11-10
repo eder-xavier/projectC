@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Titan_app',
     'Capp',
+    'Cometa_app',
 ]
 
 

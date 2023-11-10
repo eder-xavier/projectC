@@ -1,0 +1,38 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/publications.css' %}">
+</head>
+
+<body>
+
+  <section class="eclipse-container">
+    <h1 class="h1papers">Papers</h1>
+    <img class="eclipse_img" src="{% static 'img/titan/mid/eclipse.png' %}" alt="eclipse">
+  </section>
+
+  <section class="publications_sections_main">
+    <article class="article_publications">
+      <a class="a_article_publications" href="{% url 'Capp:home' %}">Catalogo</a>
+    </article>
+    <article class="article_publications">
+      <a class="a_article_publications" href="{% url 'Cometa_app:home' %}">Cometa</a>
+    </article>
+  </section>
+
+
+
+
+
+
+</body>
+
+</html>
+{% endblock %}

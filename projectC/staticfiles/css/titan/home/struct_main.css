@@ -22,7 +22,9 @@ body {
     background-color: black;
     display: flex;
     height: 15vh;
+    /*
     border-bottom: 2px solid #efefef;
+    */
   }
   
   nav{
@@ -169,6 +171,10 @@ body {
   footer{
     text-align: center;
   }
+
+  a{
+    text-decoration: none;
+}
 
   /* Estilização da barra de rolagem */
 ::-webkit-scrollbar {
