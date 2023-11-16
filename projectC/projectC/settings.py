@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-5pwj^hyg)%*i0arxsgqv4a(t-#y=p*a*om^ach$x=3oijcv&$$
 DEBUG = True
 
 ALLOWED_HOSTS = ['https://titan.ect.ufrn.br', '127.0.0.1', '127.0.0.1:9000', '*']
+CSRF_TRUSTED_ORIGINS = ['https://titan.ect.ufrn.br']
+
 #ALLOWED_HOSTS = ['projectc-production.up.railway.app']
 
 
