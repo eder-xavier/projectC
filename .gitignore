@@ -1,2 +1,4 @@
 projectC/venv
+projectC/db.sqlite3
 .env
+db.sqlite3
