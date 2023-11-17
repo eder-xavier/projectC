@@ -21,7 +21,7 @@
                     <tr>
                         <th class="sdata" colspan="3">Binary Parameters</th>
                         <th class="nada"></th>
-                        <th class="tdata" colspan="4">Third Body Pameters</th>
+                        <th class="tdata" colspan="5">Third Body Pameters</th>
                         <th class="nada"></th>
                         <th class="tdata" colspan="2">Linear Term</th>
                     </tr>
@@ -31,6 +31,7 @@
                         <th title="Epoch">Epoch</th>
                         <th class="nada"></th>
                         <th title="Third body period">period</th>
+                        <th title="Third body period">Epoch</th>
                         <th title="Third body eccentricity">Eccentricity</th>
                         <th title="Projected semi-major axis of the third body">a * sin(i)</th>
                         <th title="third body inclination">&omega;</th>
@@ -41,9 +42,10 @@
                     <tr>
                         <th class="unidades" ></th>
                         <th class="unidades">( d )</th>
-                        <th class="unidades">( BJD )</th>
+                        <th class="unidades">( BJD - 2400000 )</th>
                         <th class="nada"></th>
                         <th class="unidades">( d )</th>
+                        <th class="unidades">( BJD - 24548333 )</th>
                         <th class="unidades">  </th>
                         <th class="unidades">( au )</th>
                         <th class="unidades">( ° )</th>
@@ -51,17 +53,18 @@
                         <th class="unidades">( min )</th>
                         <th class="unidades">( min/d )</th>
                     </tr>
-
+                
                 </thead>
                 <tbody>
-                    {% for dado in lista_pagina %}
+                    {% for dado in lista_pagina_out %}
                     <tr>
                         <tr>
                             <td class="KIC/EPIC"><a href="{% url 'Capp:pagina_objetos' kic=dado.kic %}">{{ dado.kic }}</a></td>
                             <td class="Period">{{ dado.Period }}</td>
-                            <td class="bjd0">{{ dado.bjd0 }}</td>
+                            <td class="bjd0">{{ dado.epoch }}</td>
                             <td class="nada"></td>
                             <td class="Period_td">{{ dado.Period_td }}</td>
+                            <td class="Period_td">{{ dado.epoch_td }}</td>
                             <td class="e">{{ dado.e}}</td>
                             <td class="a">{{ dado.a }}</td>
                             <td class="omega">{{ dado.omega }}</td>
@@ -83,8 +86,8 @@
             <article>
                 <h1 id="seqfigsh1">Figure Descriptions</h1>
                 <p class="seqfigsp">From left to right and top to bottom:</p>
-                <p class="seqfigsp"> (i) Kepler lightcurve, (ii) TESS lightcurve, (iii) Lomb-Scagle periodogram, </p>
-                <p class="seqfigsp">(iv) String length periodogram, (v) Lightcurve in phase and (vi) O-C Diagram.</p>
+                <p class="seqfigsp"> (i) Kepler lightcurve, (ii) TESS lightcurve, (iii) Lomb-Scargle periodogram, </p>
+                <p class="seqfigsp">(iv) String-length periodogram, (v) Lightcurve in phase, and (vi) O-C Diagram.</p>
             </article>
 
             <article>
