@@ -1,65 +1,63 @@
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render,HttpResponse,redirect, get_object_or_404
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.decorators import login_required
-from .models import DadosGerais
-from django.core.paginator import Paginator
-from . import models
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import WithVariation, OutVariation
 
-#################### HOME PAGES
-
-
-def home0(request):
-    return render(request, 'catalog/home/home.html')
+dados_with_variation = WithVariation.objects.all()
+dados_out_variation = OutVariation.objects.all()
+dados = list(dados_with_variation) + list(dados_out_variation)
 
 def home(request):
-    dados = DadosGerais.objects.all()
     if 'kic' in request.GET:
         id_pesquisa = request.GET['kic']
         try:
             id_pesquisa = int(id_pesquisa)
-            dado = DadosGerais.objects.get(kic=id_pesquisa)
-            return redirect('Capp:pagina_objetos', kic=id_pesquisa)
+            with_variation = WithVariation.objects.filter(kic=id_pesquisa).first()
+            out_variation = OutVariation.objects.filter(kic=id_pesquisa).first()
+
+            if with_variation or out_variation:
+                return redirect('Capp:pagina_objetos', kic=id_pesquisa)
+            else:
+                return render(request, 'catalog/notf.html')
         except ValueError:
-            return render(request, 'catalog/notf.html')
-        except DadosGerais.DoesNotExist:
             return render(request, 'catalog/notf.html')
     else:
         itens_por_pagina = 12
-        paginator = Paginator(dados, itens_por_pagina)
-    
-        # Obter o número da página atual
+        dados_with_variation = WithVariation.objects.all()
+        dados_out_variation = OutVariation.objects.all()
+        dados = list(dados_with_variation) + list(dados_out_variation)
+        paginator_with = Paginator(dados_with_variation, itens_por_pagina)
+        paginator_out = Paginator(dados_out_variation, itens_por_pagina)
+
         page_number = request.GET.get('page', 1)
         page_number = int(page_number)
-    
-        try:
-            dados_paginados = paginator.page(page_number)
-        except PageNotAnInteger:
-            # Se a página não for um número inteiro, exibir a primeira página
-            dados_paginados = paginator.page(1)
-        except EmptyPage:
-        # Se a página estiver fora do intervalo, exibir a última página
-            dados_paginados = paginator.page(paginator.num_pages)
-    return render(request, 'catalog/home/home.html', {'dados': dados_paginados})
 
-# ...
+        try:
+            dados_paginados_with_variation = paginator_with.page(page_number)
+            dados_paginados_out_variation = paginator_out.page(page_number)
+        except PageNotAnInteger:
+            dados_paginados_with_variation = paginator_with.page(1)
+            dados_paginados_out_variation = paginator_out.page(1)
+        except EmptyPage:
+            dados_paginados_with_variation = paginator_with.page(paginator_with.num_pages)
+            dados_paginados_out_variation = paginator_out.page(paginator_out.num_pages)
+
+        context = {
+            #'dados': dados_paginados,
+            'dados_paginados_with_variation': dados_paginados_with_variation,
+            'dados_paginados_out_variation': dados_paginados_out_variation,
+            }
+
+        return render(request, 'catalog/home/home.html', context)
 
 def pagina_objetos(request, kic):
-    # Obtenha todos os objetos relacionados ao 'kic'
-    lista_de_dados = DadosGerais.objects.filter(kic=kic)
+    lista_de_dados1 = WithVariation.objects.filter(kic=kic)
+    lista_de_dados2 = OutVariation.objects.filter(kic=kic)
 
-    # Número total de objetos
-    total_objetos = lista_de_dados.count()
-
-    # Número de itens por página
+    total_objetos = len(lista_de_dados1) + len(lista_de_dados2)
     itens_por_pagina = 12
-
-    # Calcule o número total de páginas necessárias para exibir os objetos em grupos de 12
     total_paginas = (total_objetos + itens_por_pagina - 1) // itens_por_pagina
 
-    # Obtenha o número da página da consulta de parâmetro GET (se não for fornecido, use 1)
     page_number = request.GET.get('page', 1)
     page_number = int(page_number)
 
@@ -68,39 +66,28 @@ def pagina_objetos(request, kic):
     elif page_number > total_paginas:
         page_number = total_paginas
 
-    # Calcule o índice inicial e final dos objetos a serem exibidos nesta página
     indice_inicial = (page_number - 1) * itens_por_pagina
     indice_final = min(indice_inicial + itens_por_pagina, total_objetos)
 
-    # Obtenha a lista de objetos a serem exibidos nesta página
-    lista_pagina = lista_de_dados[indice_inicial:indice_final]
-
-    # Obtenha o objeto correspondente ao KIC selecionado
-    objeto_kic = get_object_or_404(DadosGerais, kic=kic)
+    lista_pagina_with = lista_de_dados1[indice_inicial:indice_final]
+    lista_pagina_out = lista_de_dados2[indice_inicial:indice_final]
 
     template_name = f'catalog/mid/kic{kic}/page{kic}.html'
     context = {
-        'lista_pagina': lista_pagina,
+        'lista_pagina_with': lista_pagina_with,
+        'lista_pagina_out': lista_pagina_out,
         'total_paginas': total_paginas,
         'page_number': page_number,
-        'objeto_kic': objeto_kic,
     }
     return render(request, template_name, context)
 
 def pagina_continuacao(request, kic):
-    # Obtenha todos os objetos relacionados ao 'kic'
-    lista_de_dados = DadosGerais.objects.filter(kic=kic)
+    lista_de_dados = WithVariation.objects.filter(kic=kic)
 
-    # Número total de objetos
-    total_objetos = lista_de_dados.count()
-
-    # Número de itens por página
+    total_objetos = len(lista_de_dados)
     itens_por_pagina = 12
-
-    # Calcule o número total de páginas necessárias para exibir os objetos em grupos de 12
     total_paginas = (total_objetos + itens_por_pagina - 1) // itens_por_pagina
 
-    # Obtenha o número da página da consulta de parâmetro GET (se não for fornecido, use 1)
     page_number = request.GET.get('page', 1)
     page_number = int(page_number)
 
@@ -109,22 +96,17 @@ def pagina_continuacao(request, kic):
     elif page_number > total_paginas:
         page_number = total_paginas
 
-    # Calcule o índice inicial e final dos objetos a serem exibidos nesta página
     indice_inicial = (page_number - 1) * itens_por_pagina
     indice_final = min(indice_inicial + itens_por_pagina, total_objetos)
 
-    # Obtenha a lista de objetos a serem exibidos nesta página
     lista_pagina = lista_de_dados[indice_inicial:indice_final]
 
-    #template_name = f'mid/kic{kic}/continuacao{kic}.html'
     template_name = 'catalog/home/home2.html'
-
     context = {
         'lista_pagina': lista_pagina,
         'total_paginas': total_paginas,
         'page_number': page_number,
     }
-    return render(request, template_name, context) 
-
+    return render(request, template_name, context)
     
 
