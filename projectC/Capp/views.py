@@ -26,27 +26,28 @@ def home(request):
         dados_with_variation = WithVariation.objects.all()
         dados_out_variation = OutVariation.objects.all()
         dados = list(dados_with_variation) + list(dados_out_variation)
-        paginator_with = Paginator(dados_with_variation, itens_por_pagina)
-        paginator_out = Paginator(dados_out_variation, itens_por_pagina)
+        paginator = Paginator(dados, itens_por_pagina)
 
         page_number = request.GET.get('page', 1)
         page_number = int(page_number)
 
         try:
-            dados_paginados_with_variation = paginator_with.page(page_number)
-            dados_paginados_out_variation = paginator_out.page(page_number)
+            dados_paginados = paginator.page(page_number)
         except PageNotAnInteger:
-            dados_paginados_with_variation = paginator_with.page(1)
-            dados_paginados_out_variation = paginator_out.page(1)
+            dados_paginados = paginator.page(1)
         except EmptyPage:
-            dados_paginados_with_variation = paginator_with.page(paginator_with.num_pages)
-            dados_paginados_out_variation = paginator_out.page(paginator_out.num_pages)
+            dados_paginados = paginator.page(paginator.num_pages)
+
+        # Verifique se a segunda tabela deve ser exibida
+        exibir_tabela_2 = (
+            page_number == paginator.num_pages and  # Página atual é a última página
+            len(dados_out_variation) > 0  # Existem dados na segunda tabela
+        )
 
         context = {
-            #'dados': dados_paginados,
-            'dados_paginados_with_variation': dados_paginados_with_variation,
-            'dados_paginados_out_variation': dados_paginados_out_variation,
-            }
+            'dados_paginados': dados_paginados,
+            'exibir_tabela_2': exibir_tabela_2,
+        }
 
         return render(request, 'catalog/home/home.html', context)
 

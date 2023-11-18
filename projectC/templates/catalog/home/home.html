@@ -56,7 +56,7 @@
                 </thead>
                 <tbody>
 
-                    {% for dado in dados_paginados_with_variation %}
+                    {% for dado in dados_paginados %}
                     <tr>
                         <td class="KIC/EPIC"><a href="{% url 'Capp:pagina_objetos' kic=dado.kic %}">{{ dado.kic }}</a></td>
                         <td class="Period">{{ dado.Period }}</td>
@@ -73,23 +73,41 @@
                     </tr>
                 
                     {% endfor %}
-                    
+
+                    {% if exibir_tabela_2 %}
+                        {% for dado in dados_out_variation %}
+                        <tr>
+                            <td class="KIC/EPIC"><a href="{% url 'Capp:pagina_objetos' kic=dado.kic %}">{{ dado.kic }}</a></td>
+                            <td class="Period">{{ dado.Period }}</td>
+                            <td class="bjd0">{{ dado.epoch }}</td>
+                            <td class="nada"></td>
+                            <td class="Period_td">{{ dado.Period_td }}</td>
+                            <td class="Period_td">{{ dado.epoch_td }}</td>
+                            <td class="e">{{ dado.e}}</td>
+                            <td class="a">{{ dado.a }}</td>
+                            <td class="omega">{{ dado.omega }}</td>
+                            <td class="nada"></td>
+                            <td class="Aa">{{ dado.Aa}}</td>
+                            <td class="Bb">{{ dado.Bb }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
                 
                 </tbody>
             </table>
 
             <article class="pagecontrol2">
                 <span class="step-links">
-                    {% if dados_paginados_with_variation.has_previous %}
-                        <a href="?page={{ dados_paginados_with_variation.previous_page_number }}">Return   |   </a>
+                    {% if dados_paginados.has_previous %}
+                        <a href="?page={{ dados_paginados.previous_page_number }}">Return   |   </a>
                     {% endif %}
-            
+                
                     <span class="current">
-                        Page {{ dados_paginados_with_variation.number }} of {{ dados_paginados_with_variation.paginator.num_pages }}.
+                        Page {{ dados_paginados.number }} of {{ dados_paginados.paginator.num_pages }}.
                     </span>
-            
-                    {% if dados_paginados_with_variation.has_next %}
-                        <a href="?page={{ dados_paginados_with_variation.next_page_number }}">   |   Next  </a>
+                
+                    {% if dados_paginados.has_next %}
+                        <a href="?page={{ dados_paginados.next_page_number }}">   |   Next  </a>
                     {% endif %}
                 </span>
             </article>
