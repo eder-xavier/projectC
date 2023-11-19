@@ -23,8 +23,8 @@ def home(request):
             return render(request, 'catalog/notf.html')
     else:
         itens_por_pagina = 12
-        dados_with_variation = WithVariation.objects.all()
-        dados_out_variation = OutVariation.objects.all()
+        dados_with_variation = WithVariation.objects.order_by('kic').all()
+        dados_out_variation = OutVariation.objects.order_by('kic').all()
         dados = list(dados_with_variation) + list(dados_out_variation)
         paginator = Paginator(dados, itens_por_pagina)
 
