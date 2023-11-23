@@ -1,0 +1,29 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home_admin/view_profile.css' %}">
+</head>
+
+<body>
+    <section>
+        <h2>Edit News</h2>
+
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Save Changes</button>
+        </form>
+    </section>
+</body>
+
+</html>
+
+{% endblock %}

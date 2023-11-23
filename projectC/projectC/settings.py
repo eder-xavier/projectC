@@ -25,14 +25,15 @@ SECRET_KEY = 'django-insecure-5pwj^hyg)%*i0arxsgqv4a(t-#y=p*a*om^ach$x=3oijcv&$$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://titan.ect.ufrn.br', '127.0.0.1', '127.0.0.1:9000', '*']
+ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://titan.ect.ufrn.br']
 
+#ALLOWED_HOSTS = ['https://titan.ect.ufrn.br', '127.0.0.1', '127.0.0.1:9000', '*']
 #ALLOWED_HOSTS = ['projectc-production.up.railway.app']
 
+AUTH_USER_MODEL = 'Titan_app.CustomUserTitan'
 
-
-# Application definition
+# Application definitiond
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -94,7 +95,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
-#AUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS = [
 #    {
 #        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
 #    },
@@ -107,8 +108,11 @@ DATABASES = {
 #    {
 #        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
 #    },
-#]
+]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -128,6 +132,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_URL = 'staticfiles/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/media')
+MEDIA_URL = 'staticfiles/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -148,3 +154,13 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  
+#LOGIN_URL = 'Titan_app:login'
+
+# Renova o tempo de expiração da sessão a cada solicitação
+SESSION_SAVE_EVERY_REQUEST = True
+
+# Tempo de expiração da sessão em segundos
+SESSION_COOKIE_AGE = 1800
+
+# Sessão expira quando o navegador é fechado
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

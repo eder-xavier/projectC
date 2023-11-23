@@ -1,0 +1,48 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/extensions.css' %}">
+</head>
+
+<body>
+
+    <section class="extensions-image-container">
+        <h1 class="h1_extensions">Extensões</h1>
+        <img class="earth_img" src="{% static 'img/titan/mid/extensions.png' %}" alt="earth">
+    </section>
+
+    <section>
+        <article class="article_cometa">
+            <h2 class="titulo_publications_articles">Cometa Nordestino</h2>
+            <div class="container-extensions">
+                <img class="cometa_logo" src="{% static 'img/cometa/home/logo-cometa.png'%}"
+                    alt="Logo cometa Nordestino">
+                <div class="extensions_text">
+                    O projeto de extensão Cometa Nordestino tem o intuito
+                    de levar o conhecimento da astronomia e astronáutica
+                    pelas escolas do Rio Grande do Norte.
+                </div>
+            </div>
+            <div class="extensions_links-div">
+                <a href="{% url 'Cometa_app:home' %}">
+                    <span class="extensions_links">
+                        Acesse aqui
+                    </span>
+                </a>
+            </div>
+        </article>
+    </section>
+
+
+
+</body>
+
+</html>
+{% endblock %}

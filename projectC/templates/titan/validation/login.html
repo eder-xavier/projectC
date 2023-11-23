@@ -1,0 +1,54 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/validation.css' %}">
+</head>
+
+<body>
+    <section class="form-box">
+
+        <h2 class="titulo_form">Login</h2>
+
+        <form method="post" action="{% url 'Titan_app:login' %}">
+            {% csrf_token %}
+
+            <article class="input-box">
+
+                <span class="material-symbols-outlined">
+                    person
+                </span>
+                <input type="text" required name="username" id="username">
+                <label>Usuário</label>
+
+            </article>
+
+            <article class="input-box">
+
+                <span class="material-symbols-outlined">
+                    lock
+                </span>
+                <input type="password" required id="password" name="password">
+                <label>Senha</label>
+
+            </article>
+
+            <button type="submit" class="btn">Login</button>
+
+        </form>
+        <aside class="register_code_aside">
+            <a class="register_code_link" href="{% url 'Titan_app:registration_code' %}">Verificar Código de Registro</a>
+        </aside>
+    </section>
+</body>
+
+</html>
+
+{% endblock %}

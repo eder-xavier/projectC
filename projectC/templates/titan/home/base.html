@@ -6,17 +6,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kepler + TESS Catalog</title>
+  <title>Titan</title>
   <link rel="shortcut icon" href="{% static 'img/titan/favicons/favicon.ico' %}" type="image/x-icon">
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/struct_main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/slider.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/contact.css' %}">
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DA_API&callback=initMap" async defer></script>
-
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -31,11 +28,16 @@
     <nav id="nav-list">
       <ul>
         <li><a class="navlinks" href="{% url 'Titan_app:home' %}">Home</a></li>
-        <li><a class="navlinks" href="#about">Notícias</a></li>
+        <li><a class="navlinks" href="{% url 'Titan_app:news' %}">Notícias</a></li>
         <li><a class="navlinks" href="{% url 'Titan_app:publications' %}">Publicações</a></li>
-        <li><a class="navlinks" href="#services">Time</a></li>
-        <li><a class="navlinks" id="login_border" href="#contact">Fazer Login</a>
-        </li>
+        <li><a class="navlinks" href="{% url 'Titan_app:extensions' %}">Extensões</a></li>
+        <li><a class="navlinks" href="#time">Time</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a class="navlinks" href="{% url 'Titan_app:view_profile' username=request.user.username %}">Perfil</a></li>
+          <li><a class="navlinks" href="{% url 'Titan_app:user_logout' %}">Logout</a></li>
+          {% else %}
+          <li><a class="navlinks" id="login_border" href="{% url 'Titan_app:login' %}">Login</a></li>
+          {% endif %}
 
         <!-- <a href="{% url 'Capp:home' %}">catalogo</a> -->
       </ul>
@@ -47,7 +49,7 @@
   {% endblock %}
 
   <footer>
-    <p>&copy; 2023 Titan. Por Éder Xavier.</p>
+    <p>&copy; 2023 Titan. Todos os direitos reservados.</p>
   </footer>
 
 </body>

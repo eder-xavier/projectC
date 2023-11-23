@@ -6,12 +6,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kepler + TESS Catalog</title>
-  <link rel="shortcut icon" href="{% static 'img/titan/favicons/favicon.ico' %}" type="image/x-icon">
+  <title>Cometa Nordestino</title>
+  <link rel="shortcut icon" href="{% static 'img/cometa/home/favicon_io/favicon.ico' %}" type="image/x-icon">
 
-  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/struct_main.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/slider.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/contact.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/cometa/home/home.css' %}">
 
   <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DA_API&callback=initMap" async defer></script>
 
@@ -24,9 +22,7 @@
   <script src="{% static 'js/titan/burger.js' %}"></script>
   <script src="{% static 'js/titan/slider.js' %}"></script>
   <header>
-    <section>
-      <img class="logo_titan" src="{% static 'img/titan/home/logo_titan.png' %}" alt="imagem">
-    </section>
+    <!-- 
     <div id="menu-toggle">&#9776;</div>
     <nav id="nav-list">
       <ul>
@@ -37,17 +33,36 @@
         <li><a class="navlinks" id="login_border" href="#contact">Fazer Login</a>
         </li>
 
-        <!-- <a href="{% url 'Capp:home' %}">catalogo</a> -->
       </ul>
+          </nav>
+      -->
+  </header>
 
+  <section class="section_header">
+
+    <nav id="nav-list">
+      <ul>
+        <li><a class="navlinks" href="{% url 'Cometa_app:home' %}">Home</a></li>
+        <li><a class="navlinks" href="#notices">Notícias</a></li>
+        <li><a class="navlinks" href="#missoes">Missões</a></li>
+        <li><a class="navlinks" href="#time">Time</a></li>
+        <li><a class="navlinks" href="{% url 'Cometa_app:login' %}">Login</a>
+        </li>
+
+      </ul>
     </nav>
 
-  </header>
-  {% block content %}
-  {% endblock %}
+  </section>
+  
+  <main>
+    <section class="section_main">
+      {% block content %}
+      {% endblock %}
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2023 Titan. Por Éder Xavier.</p>
+    <p class="p_footer">&copy; 2023 Cometa Nordestino. Todos os direitos reservados.</p>
   </footer>
 
 </body>
