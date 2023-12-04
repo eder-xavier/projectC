@@ -30,7 +30,7 @@
         <li><a class="navlinks" href="{% url 'Titan_app:home' %}">Home</a></li>
         <li><a class="navlinks" href="{% url 'Titan_app:news' %}">Notícias</a></li>
         <li><a class="navlinks" href="{% url 'Titan_app:publications' %}">Publicações</a></li>
-        <li><a class="navlinks" href="{% url 'Titan_app:extensions' %}">Extensões</a></li>
+        <li><a class="navlinks" href="{% url 'Titan_app:extensions' %}">Extensão</a></li>
         <li><a class="navlinks" href="#time">Time</a></li>
           {% if request.user.is_authenticated %}
           <li><a class="navlinks" href="{% url 'Titan_app:view_profile' username=request.user.username %}">Perfil</a></li>

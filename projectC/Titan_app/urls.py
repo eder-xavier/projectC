@@ -24,4 +24,6 @@ urlpatterns = [
     path('user/news/edit/<int:news_id>/', views.edit_news, name='edit_news'),
     path('user/news/delete/<int:news_id>/', views.delete_news, name='delete_news'),
     
+
 ]
+
