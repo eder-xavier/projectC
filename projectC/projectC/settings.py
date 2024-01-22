@@ -31,7 +31,7 @@ CSRF_TRUSTED_ORIGINS = ['https://titan.ect.ufrn.br']
 #ALLOWED_HOSTS = ['https://titan.ect.ufrn.br', '127.0.0.1', '127.0.0.1:9000', '*']
 #ALLOWED_HOSTS = ['projectc-production.up.railway.app']
 
-AUTH_USER_MODEL = 'Titan_app.CustomUserTitan'
+#AUTH_USER_MODEL = 'Titan_app.CustomUserTitan'
 
 # Application definitiond
 

@@ -1,8 +1,9 @@
 
-.article_cometa{
+.article_cometa, .article_astrotime{
     text-align: center;
     margin-left: 6px;
     margin-right: 6px;
+    margin-bottom: 20px;
     /*background-color: rgb(17, 17, 17); */
     border: 1px solid white;
     padding: 23px;
@@ -31,6 +32,14 @@
 .container-extensions{
     display: block;
     text-align: center;
+}
+
+.astrotime_logo{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .cometa_logo{
@@ -64,8 +73,29 @@ a{
     transition: all 0.3s ease-in-out;
 }
 
+.section-apoiadores{
+    text-align: center;
+    width: 100%;
+}
+
+.section-apoiadores h1{
+    color: rgb(255, 151, 25);
+    margin: 36px;
+}
+
+.article-apoiadores{
+    text-align: center;
+    display: flex;
+    
+}
+
+.img-apoiadores{
+    max-height: 99px;
+    margin: auto;
+}
+
 @media screen and (min-width: 999px) {
-    .article_cometa{
+    .article_cometa, .article_astrotime{
         margin-left: 200px;
         margin-right: 200px;
     }

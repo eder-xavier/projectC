@@ -22,21 +22,21 @@
   <script src="{% static 'js/titan/slider.js' %}"></script>
   <header>
     <section>
-      <img class="logo_titan" src="{% static 'img/titan/home/logo_titan.png' %}" alt="imagem">
+      <a href="{% url 'Titan_app:home' %}"><img class="logo_titan" src="{% static 'img/titan/home/logo_titan.png' %}" alt="imagem"></a>
     </section>
     <div id="menu-toggle">&#9776;</div>
     <nav id="nav-list">
       <ul>
         <li><a class="navlinks" href="{% url 'Titan_app:home' %}">Home</a></li>
-        <li><a class="navlinks" href="{% url 'Titan_app:news' %}">Notícias</a></li>
+        <!--<li><a class="navlinks" href="">Notícias</a></li> -->
         <li><a class="navlinks" href="{% url 'Titan_app:publications' %}">Publicações</a></li>
         <li><a class="navlinks" href="{% url 'Titan_app:extensions' %}">Extensão</a></li>
         <li><a class="navlinks" href="#time">Time</a></li>
           {% if request.user.is_authenticated %}
-          <li><a class="navlinks" href="{% url 'Titan_app:view_profile' username=request.user.username %}">Perfil</a></li>
-          <li><a class="navlinks" href="{% url 'Titan_app:user_logout' %}">Logout</a></li>
+          <!-- <li><a class="navlinks" href="{ url 'Titan_app:view_profile' username=request.user.username }">Perfil</a></li> -->
+          <!-- <li><a class="navlinks" href="{ url 'Titan_app:user_logout' }">Logout</a></li> -->
           {% else %}
-          <li><a class="navlinks" id="login_border" href="{% url 'Titan_app:login' %}">Login</a></li>
+          <!-- <li><a class="navlinks" id="login_border" href="{ url 'Titan_app:login' }">Login</a></li> -->
           {% endif %}
 
         <!-- <a href="{% url 'Capp:home' %}">catalogo</a> -->

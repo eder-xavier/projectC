@@ -6,6 +6,29 @@ a{
     position: relative;
 }
 
+.section-double{
+    color: rgb(255, 151, 25);
+    display: flex;
+    width: 100%;
+    margin-bottom: 100px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.double-article1, .double-article2{
+    text-align: justify;
+    margin-left: 6px;
+    margin-right: 6px;
+    /*background-color: rgb(17, 17, 17); */
+    border: 1px solid white;
+    padding: 23px;
+    border-radius: 10px;
+    height: 150px;
+    width: 250px;
+}
+
 .h1papers{
     position: relative;
     text-align: center;
@@ -36,12 +59,14 @@ a{
 }
 
 
+
 article{
     text-decoration: none;
 }
 
 .article_catalog{
     text-align: justify;
+    margin-top: 150px;
     margin-left: 6px;
     margin-right: 6px;
     /*background-color: rgb(17, 17, 17); */
@@ -57,6 +82,16 @@ article{
 
 .publications_text{
     text-align: justify;
+}
+
+#idpremiados{
+    position: relative;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#span_double{
+    color: rgb(255, 151, 25);
 }
 
 .publications_links-div{
@@ -80,6 +115,15 @@ article{
 
 
 @media screen and (min-width: 999px) {
+    .double-article1{
+        position: absolute;
+        right: 50vw;
+    }
+    .double-article2{
+        position: absolute;
+        left: 50vw;
+    }
+
     .article_catalog{
         
         margin-left: 200px;
