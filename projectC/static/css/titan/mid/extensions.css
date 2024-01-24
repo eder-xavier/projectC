@@ -16,7 +16,7 @@
     width: 100%;
     object-fit: cover;
     align-self: center;
-    height: 400px;
+    height: 460px;
     z-index: -2;
 }
 
@@ -91,6 +91,7 @@ a{
 
 .img-apoiadores{
     max-height: 99px;
+    max-width: 190px;
     margin: auto;
 }
 

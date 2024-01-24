@@ -18,6 +18,9 @@ def publications(request):
 def extensions(request):
     return render(request, 'titan/mid/extensions.html')
 
+def award_articles(request):
+    return render(request, 'titan/mid/award_articles.html')
+
 
 #def registration_code(request):
 #    if request.method == 'POST':

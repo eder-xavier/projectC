@@ -24,18 +24,18 @@
       <article class="double-article1">
         <h2>Lista de Publicações no NASA ADS</h2>
         <div class="publications_links-div">
-          <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=database%3A%20astronomy&p_=0&q=pubdate%3A%5B2010-01%20TO%209999-12%5D%20author%3A(%22Almeida%2C%20L.%20A.%22)&sort=date%20desc%2C%20bibcode%20desc">
+          <a target="_blank" href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=database%3A%20astronomy&p_=0&q=pubdate%3A%5B2010-01%20TO%209999-12%5D%20author%3A(%22Almeida%2C%20L.%20A.%22)&sort=date%20desc%2C%20bibcode%20desc">
             <span id="span_double" class="publications_links">
               Acesse aqui
             </span>
           </a>
         </div>
       </article>
-
+      
       <article class="double-article2">
         <h2>Artigos Premiados</h2>
         <div id="idpremiados" class="publications_links-div">
-          <a href="">
+          <a href="{% url 'Titan_app:award_articles' %}">
             <span id="span_double" class="publications_links">
               Acesse aqui
             </span>
@@ -55,7 +55,7 @@
         também são caracterizados no catálogo.
       </div>
       <div class="publications_links-div">
-        <a href="{% url 'Capp:home' %}">
+        <a target="_blank" href="{% url 'Capp:home' %}">
           <span class="publications_links">
             Acesse aqui
           </span>

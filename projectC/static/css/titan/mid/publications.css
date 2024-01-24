@@ -12,7 +12,7 @@ a{
     width: 100%;
     margin-bottom: 100px;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -44,8 +44,18 @@ a{
     width: 100%;
     object-fit: cover;
     align-self: center;
-    height: 400px;
+    height: 460px;
     z-index: -2;
+}
+
+.nebulous_img{
+    position: relative;
+    bottom: 19.6vh;
+    width: 100%;
+    object-fit: cover;
+    align-self: center;
+    height: 460px;
+    z-index: -5;
 }
 
 .catalog_img{
