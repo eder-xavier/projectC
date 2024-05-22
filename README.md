@@ -1,7 +1,10 @@
 # projectC
 
 BINARY CATALOG
- Catalog with data from 240 binary stellar systems
+ 
+Catalog with data from 250 binary stellar systems
+
+Catálogo com dados de mais de 250 sistemas binários 
 
 Acesse com esse link: https://titan.ect.ufrn.br/papers/tertiarycandidatescatalog/catalog_home/
 
