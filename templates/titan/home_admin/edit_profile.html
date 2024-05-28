@@ -1,0 +1,29 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home_admin/edit_profile.css' %}">
+</head>
+<body>
+    <section>
+        <h2>Edite seu Perfil</h2>
+        <form method="post" enctype="multipart/form-data" class="form-container">
+          {% csrf_token %}
+          <p>Foto de Perfil:</p>
+          {{ form.profile_picture }}
+          <p>Bio:</p>
+          {{ form.bio}}
+          <button type="submit">Salvar</button>
+        </form>
+    </section>
+</body>
+</html>
+
+{% endblock %}

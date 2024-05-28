@@ -1,0 +1,46 @@
+
+.view_profile_main{
+    align-items: center;
+    align-content: center;
+}
+
+.profile_informations{
+    margin-left: 50px;
+    padding: 20px;
+}
+
+.rounded-profile-picture {
+    width: 150px;  
+    height: 150px; 
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Estilo para o conteúdo da publicação */
+.news-content {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilo para a imagem da publicação */
+.news-media {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 999px) {
+    .news-content {
+        max-width: 600px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .news-media {
+        max-width: 600px;
+        height: auto;
+        border-radius: 8px;
+    }
+}
