@@ -1,0 +1,82 @@
+
+.article_cometa{
+    text-align: center;
+    margin-left: 6px;
+    margin-right: 6px;
+    /*background-color: rgb(17, 17, 17); */
+    border: 1px solid white;
+    padding: 23px;
+    border-radius: 10px;
+}
+
+.earth_img{
+    position: relative;
+    bottom: 19.6vh;
+    width: 100%;
+    object-fit: cover;
+    align-self: center;
+    height: 400px;
+    z-index: -2;
+}
+
+.h1_extensions{
+    position: relative;
+    text-align: center;
+    top: 20vh;
+    font-size: 50px;
+    color: rgb(255, 151, 25);
+    z-index: -1;
+}
+
+.container-extensions{
+    display: block;
+    text-align: center;
+}
+
+.cometa_logo{
+    height: 200px;
+    width: 350px;
+}
+
+.extensions_text{
+    text-align: justify; 
+    margin-bottom: 39px;
+}
+
+.extensions_links-div{
+    display: block;
+}
+
+a{
+    color: whitesmoke;
+}
+
+.extensions_links{
+    text-align: center;
+    padding: 9px;
+    width: 100px;
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+}
+
+.extensions_links:hover{
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 999px) {
+    .article_cometa{
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .container-extensions{
+        display: flex;
+    }
+
+    .extensions_text{
+        margin-top: 30px;
+    }
+
+}
+
