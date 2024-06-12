@@ -18,15 +18,20 @@
   header {
     background-color: black;
     display: flex;
-    height: 15vh;
+    height: 13vh;
     width: 100%;
     position: fixed;
     top: 0vh;
     z-index: 2;
-    /*
-    border-bottom: 2px solid #efefef;
-    */
 }
+
+
+.navlinks.active {
+  background-color: #d3d3d367; /* Cor de fundo cinza */
+  border-radius: 8px;
+  padding: 10px;
+}
+
 
 header a:hover {
     opacity: 0.7;
@@ -34,7 +39,7 @@ header a:hover {
 
 nav {
     position: fixed;
-    right: 8vw;
+    right: 2vw;
     top: 6.7vh;
 }
 
@@ -80,7 +85,7 @@ nav a {
     text-decoration: none;
     color: #f5f5f5;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 15px;
     position: relative; /* Adicionado para a animação */
     transition: color 0.3s ease;
 }
@@ -172,12 +177,15 @@ nav a {
 .fa.fa-fw.fa-home,
 .fa.fa-fw.fa-book,
 .fa.fa-fw.fa-project-diagram,
-.fa.fa-fw.fa-users {
+.fa.fa-fw.fa-users,
+.fa.fa-fw.fa-satellite-dish,
+.fa.fa-fw.fa-handshake,
+.fa.fa-fw.fa-newspaper {
   margin-right: 7px;
 }
 
 .fa.fa-fw.fa-project-diagram{
-  font-size: 16px;
+  font-size: 14px;
 }
 
   .overlay-text p{
@@ -216,7 +224,7 @@ nav a {
 
   .logo_titan{
     position: relative;
-    top: 2vh;
+    top: 1vh;
     left: 2vw;
     width: 75px;
     height: 75px;

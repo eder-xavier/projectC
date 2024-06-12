@@ -20,7 +20,8 @@ def extensions(request):
 
 def award_articles(request):
     return render(request, 'titan/mid/award_articles.html')
-
+def team(request):
+    return render(request, 'titan/mid/team.html')
 
 #def registration_code(request):
 #    if request.method == 'POST':
