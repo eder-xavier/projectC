@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan</title>
+  <link rel="shortcut icon" href="{% static 'img/titan/favicons/favicon.ico' %}" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/struct_main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/slider.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/titan/home/contact.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKX36YDXR7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QKX36YDXR7');
+  </script>
+</head>
+<body>
+  <script src="{% static 'js/titan/burger.js' %}"></script>
+  <script src="{% static 'js/titan/slider.js' %}"></script>
+  <header>
+    <section>
+      <a href="{% url 'Titan_app:home' %}"><img class="logo_titan" src="{% static 'img/titan/home/logo_titan.png' %}" alt="imagem"></a>
+    </section>
+    <div id="menu-toggle">&#9776;</div>
+    <nav id="nav-list" class="navigation_header">
+      <ul>
+        <li><a class="navlinks {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'Titan_app:home' %}"><i class="fa fa-fw fa-home"></i>Home</a></li>
+        <!-- <li><a class="navlinks"><i class="fa fa-fw fa-newspaper"></i>News</a></li> -->
+        <li><a class="navlinks {% if request.resolver_match.url_name == 'publications' %}active{% endif %}" href="{% url 'Titan_app:publications' %}"><i class="fa fa-fw fa-book"></i>Publicações</a></li>
+        <li><a class="navlinks {% if request.resolver_match.url_name == 'extensions' %}active{% endif %}" href="{% url 'Titan_app:extensions' %}"><i class="fa fa-fw fa-project-diagram"></i>Extensão</a></li>
+        <li><a class="navlinks {% if request.resolver_match.url_name == 'team' %}active{% endif %}" href="{% url 'Titan_app:team'%}"><i class="fa fa-fw fa-users"></i>Time</a></li>
+        <!-- <li><a class="navlinks"><i class="fa fa-fw fa-handshake"></i>Colaborador</a></li> -->
+        {% if request.user.is_authenticated %}
+        {% else %}
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  {% block content %}
+  {% endblock %}
+  <footer class="footer-base">
+    <p>&copy; 2023 Titan. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

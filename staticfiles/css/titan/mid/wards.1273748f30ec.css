@@ -1,0 +1,119 @@
+.nebulous_img{
+    object-fit: none;
+    width: 100%;
+    align-self: center;
+    min-height: 460px;
+    z-index: -5;
+}
+.h1_award{
+    color: rgb(255, 151, 25);
+    font-size: 50px;
+    font-weight: bolder;
+    z-index: 2;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-double{
+    color: rgb(255, 151, 25);
+    display: flex;
+    width: 100%;
+    margin-bottom: 100px;
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-double h2{
+    font-size: 22px;
+}
+
+.double-article1, .double-article2{
+    text-align: justify;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 100px;
+    /*background-color: rgb(17, 17, 17); */
+    border: 1px solid white;
+    padding: 16px;
+    border-radius: 10px;
+    height: 200px;
+    width: 250px;
+}
+
+.double-article1{
+    position: absolute;
+    left: 24%;
+    transform: translateX(-24%);
+}
+.double-article2{
+    position: absolute;
+    left: 76%;
+    transform: translateX(-76%);
+}
+
+.publications_links-div{
+    text-align: center;
+}
+
+.publications_links{
+    text-align: center;
+    padding: 9px;
+    width: 100px;
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+}
+
+.publications_links:hover{
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+#idpremiados{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#idpremiados2{
+    position: relative;
+    top: 12.7%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#span_double{
+    color: rgb(255, 151, 25);
+}
+
+
+.footer-base{
+    display: none;
+}
+
+@media screen and (max-width: 756px) {
+    .double-article1{
+        position: absolute;
+        left: 5%;
+        transform: translateX(-5%);
+    }
+    .double-article2{
+        position: absolute;
+        left: 95%;
+        transform: translateX(-95%);
+    }
+
+    .double-article1 h2, .double-article2 h2{
+        font-size: 15px;
+    }
+
+    .double-article1 , .double-article2{
+        font-size: 15px;
+        height: 150px;
+        width: 200px;
+    }
+
+}

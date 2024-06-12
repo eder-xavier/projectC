@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    
+
+  }
+
+  
+  html{
+    min-width: max-content;
+    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22));
+  }
+
+  body{
+    background-size: auto;
+    overflow-y: visible;
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  #article{
+    max-width: 80vw;
+    font-size: 18px;
+    line-height: 1.6;
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: justify;
+    padding: 50px;
+  }
+
+
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  nav {
+    min-width: max-content;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+    height: 8vh;
+    margin: 0;
+  }
+
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+  }
+
+  .pnames{
+    position: relative;
+    color: rgb(0, 0, 16);
+    margin: 20px;
+  }
+
+
+
+  .mainnames{
+    font-family: 'Playfair Display SC', serif;
+  }
+  
+  #logoname{
+    font-size: 35px;
+    padding: 15px;
+    padding-left: 40px;
+  }
+
+  #logoname2{
+    font-size: 20px;
+    margin: 10px;
+    margin-left: 40px;
+  }
+
+  #logoname3{
+    font-size: 20px;
+    margin: 15px;
+    margin-left: 40px;
+  }
+
+  .form_box{
+    margin: 15px;
+    margin-left: 40px;
+    font-family: sans-serif;
+  }
+  #kic{
+    padding-top: 1.9px;
+    padding-left: 9px;
+    padding-bottom: 1.9px;
+    border: 1px solid #ccc; /* Borda com cor cinza */
+    border-radius: 10px; /* Cantos arredondados */
+  }
+
+  .unidades{
+    font-size: 14px;
+  }
+
+
+  input{
+    color: rgb(0, 0, 16);
+    border-radius: 4px;
+    font-size: 16px;
+    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+  }
+
+  .btns{
+    border-radius: 9px;
+    font-size: 13.2px;
+    padding: 4.5px;
+    color: rgb(0, 0, 16);
+    font-weight: bolder;
+    border: none;
+    background-image: linear-gradient(to right, rgb(245, 245, 245), rgb(235, 235, 235), rgb(225, 225, 225));
+
+  }
+
+  .btns:hover{
+    opacity: 0.9;
+  }
+
+
+  li:hover {
+    opacity: 0.7;
+  }
+  
+  h1, h2, h3{
+    color: rgb(233, 233, 233);
+  }
+
+
+  
+  #l {
+    padding: 5px;
+  } 
+
+  main {
+    min-height: max-content;
+    margin: 0;
+    
+    /* background-image: linear-gradient(to right, #162938, #213e54, #25445d); */
+  }
+
+
+  #container { /*Transbordagem da tela*/
+    left: -0.1vw;
+    padding: 18px;
+    align-items: center;
+    overflow-x: auto;
+    min-height: max-content;
+    background-image: linear-gradient(to right, rgb(1, 0, 10), rgb(1, 0, 16), rgb(1, 0, 22));
+  }
+
+table{
+    border-collapse: collapse;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    
+
+}
+
+td, th{
+    border: 1px solid rgb(255, 255, 255);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+thead{
+  color: rgb(0, 0, 16);
+  background-color: rgb(205, 205, 205);
+  font-size: 17px;
+}
+
+.nada{
+  background-color: rgb(0, 0, 16);
+  width: 0.5px;
+  border: 0px;
+}
+
+
+
+.sdata{
+  width: 300px;
+}
+
+tbody > tr:nth-child(odd){ /*EFEITO ZEBRADO*/
+  background-color: rgb(233, 233, 233);
+}
+
+tbody > tr:nth-child(even){ /*EFEITO ZEBRADO*/
+  background-color: rgb(205, 205, 205);
+}
+
+td{
+    text-align: center;
+    font-size: 15.6px;
+}
+caption{
+  font-size: 18px;
+  font-weight: bolder;
+  padding: 5px;
+}
+
+
+
+.pagecontrol1, .pagecontrol2, .pagecontrol3{
+  margin-top: 20px;
+  color: white;
+}
+
+.previous{
+  color: white;
+  margin-right: 10px;
+}
+
+.next{
+  color: white;
+  margin-left: 10px;
+}
+
+.previous:hover, .next:hover{
+  opacity: 0.7;
+}
+
+
+@media screen and (max-width: 999px) {
+  /* Estilos para tamanhos de tela menores */
+
+
+
+  th{
+      font-size: 14px;
+  }
+  td{
+      font-size: 13px;
+  }
+
+  .table-responsive {
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .table-responsive > .table {
+      margin-bottom: 0;
+  }
+  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .table > tfoot > tr > th,
+  .table-responsive > .table > thead > tr > td,
+  .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .table > tfoot > tr > td {
+
+      white-space: nowrap;
+      padding: 10px; /* Adicione padding aqui */
+      text-align: center; /* Centralize o conteúdo */
+  }
+}
+
+/*
+@media screen and (min-width: 999px) {
+
+}
+*/
+
+/* SCROll */
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: white;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 16);
+  border-radius: 2px;
+}

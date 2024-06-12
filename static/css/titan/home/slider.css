@@ -1,0 +1,92 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px; /* Defina o tamanho máximo desejado para o slider */
+    margin: 50px auto;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    display: flex;
+    flex: 0 0 100%; /* Garante que cada slide ocupe a largura total do contêiner */
+    overflow: hidden;
+  }
+  
+  .slide img {
+    width: 500px;
+    height: 500px;
+  }
+  
+  .text {
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: justify;
+  }
+
+  .pesq_areas{
+    font-size: 32px;
+    color: rgb(255, 147, 15);
+    text-align: center;
+  }
+
+  .slides_titulos{
+    color: rgb(255, 147, 15);
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .prev,
+  .next {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .dots {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #999;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+
+
+  
+  @media (min-width: 758px) {
+    .text{
+        position: relative;
+        top: 13vh;
+    }
+  }
+
+  @media (max-width: 758px) {
+    .text {
+      order: 1; /* Muda a ordem do texto para aparecer abaixo da imagem em telas menores */
+    }
+    .slide{
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+  }
