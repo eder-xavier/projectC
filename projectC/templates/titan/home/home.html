@@ -1,0 +1,98 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan</title>
+</head>
+
+<body>
+
+  <section class="main-content">
+    <div class="content-video">
+      <section class="video-container">
+        <div class="overlay-text">
+          <p class="welcome_txt">Titan</p>
+          <p class="titan_txt">Time de Astrofísica Estelar e Exoplanetologia</p>
+        </div>
+        <video autoplay muted loop class="galaxy_video">
+          <source src="{% static 'videos/titan/home/galaxy.mp4' %}" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </section>
+    </div>
+  </section>
+
+  <!-- Página 1 - slide 1 -->
+  <section>
+    <article class="slider" id="page1">
+      <h1 class="pesq_areas"> Áreas de Pesquisa </h1>
+      <div class="controls">
+        <div class="prev">&lt;</div>
+        <div class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="next">&gt;</div>
+      </div>
+      <div class="slides">
+        <div class="slide">
+          <img src="{% static 'img/titan/home/stellar.png' %}" alt="Slide 1">
+          <div class="text">
+            <h2 class="slides_titulos">Evolução Estelar</h2>
+            Na Astronomia, o campo da evolução estelar estuda o caminho evolutivo
+            de uma estrela durante a sua vida. Principalmente devido à sua massa,
+            o tempo de vida de uma estrela pode variar de alguns milhões de anos
+            (para as mais massivas) a trilhões de anos (para as menos massivas).
+          </div>
+        </div>
+        <!-- Página 2 - slide 2 -->
+        <div class="slide">
+          <img src="{% static 'img/titan/home/exoplanet.png' %}" alt="Slide 2">
+          <div class="text">
+            <h2 class="slides_titulos">Exoplanetogia</h2>
+            Exoplanetologia é a área que estuda exoplanetas. Este é um campo
+            interdisciplinar que inclui Astronomia, Astrobiologia, Astrofísica,
+            Astroquímica, Astrogeologia e Ciências Planetárias. Nesta área específica,
+            estamos interessados ​​em descobrir novos exoplanetas, bem como caracterizar
+            as suas atmosferas em busca de bioassinaturas.
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Seção de Contato -->
+  <section class="contact">
+    <div class="contact-container">
+      <h2>FALE CONOSCO</h2>
+      <p>Universidade Federal do Rio Grande do Norte<br>
+        Escola de Ciências e Tecnologia<br>
+        Anel Viário Contorno do Campus s/n - Capim Macio, Natal - RN, 59078-970</p>
+      <p>Email: seet.astro@gmail.com</p>
+
+      <!-- Link para o Instagram -->
+      <div class="instagram-link">
+        <a href="https://www.instagram.com/" target="_blank">
+          Instagram
+        </a>
+      </div>
+    </div>
+
+    <iframe class="locale_ect" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.086698784121!2d-35.20197022538675!3d-5.843404357586273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff82aa3e3b4d%3A0x20c4bb30f68e7bc3!2sECT%20School%20of%20Science%20and%20Technology!5e0!3m2!1sen!2sbr!4v1700432521748!5m2!1sen!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+  
+
+
+
+
+
+
+</body>
+
+</html>
+{% endblock %}
