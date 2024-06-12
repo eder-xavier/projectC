@@ -2,3 +2,4 @@ projectC/venv
 projectC/db.sqlite3
 .env
 __pycache__
+venv
