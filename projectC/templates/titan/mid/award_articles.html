@@ -1,0 +1,48 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/extensions.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/wards.css' %}">
+
+<body>
+
+    <section class="extensions-image-container">
+        <h1 class="h1_award">Artigos Premiados</h1>
+        <img class="nebulous_img" src="{% static 'img/titan/mid/nebulous.png' %}" alt="earth">
+    </section>
+
+    <section class="section-double">
+        <article class="double-article1">
+          <h2>"SELECTIONS FROM 2015: MIXING IN TWO STARS THAT TOUCH"</h2>
+          <div id="idpremiados2" class="publications_links-div">
+            <a target="_blank" href="https://aasnova.org/2015/12/23/selections-from-2015-mixing-in-two-stars-that-touch/">
+              <span id="span_double" class="publications_links">
+                Saiba Mais
+              </span>
+            </a>
+          </div>
+        </article>
+        
+        <article class="double-article2">
+          <h2>"SELECTIONS FROM 2019: A GIANT PLANET AROUND AN EVOLVED BINARY"</h2>
+          <div id="idpremiados" class="publications_links-div">
+            <a target="_blank" href="https://aasnova.org/2019/12/17/selections-from-2019-a-giant-planet-around-an-evolved-binary/">
+              <span id="span_double" class="publications_links">
+                Saiba Mais
+              </span>
+            </a>
+          </div>
+        </article>
+    </section>
+
+</body>
+
+</html>
+{% endblock %}
