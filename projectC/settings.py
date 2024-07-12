@@ -134,21 +134,26 @@ STATICFILES_URL = 'staticfiles/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/media')
 MEDIA_URL = 'staticfiles/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+#### COMENTAR ESSA PARTE QUANDO ESTIVER EM PRODUÇÃO
+#STATIC_URL = '/static/'
+## Diretório onde seus arquivos estáticos serão coletados (usado com 'collectstatic')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Diretórios adicionais onde o Django procurará por arquivos estáticos
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),  # Diretório onde você mantém seus arquivos estáticos
+#    # Outros diretórios adicionais, se necessário
+#]
+
+#### DESCOMENTAR ESSA PARTE QUANDO ESTIVER EM PRODUÇÃO
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-#STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
-#STATICFILES_STORAGE ='whitenoise.storage.StaticFilesStorage'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

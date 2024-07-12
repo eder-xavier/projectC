@@ -33,7 +33,13 @@
         <li><a class="navlinks {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'Titan_app:home' %}"><i class="fa fa-fw fa-home"></i>Home</a></li>
         <!-- <li><a class="navlinks"><i class="fa fa-fw fa-newspaper"></i>News</a></li> -->
         <li><a class="navlinks {% if request.resolver_match.url_name == 'publications' %}active{% endif %}" href="{% url 'Titan_app:publications' %}"><i class="fa fa-fw fa-book"></i>Publicações</a></li>
-        <li><a class="navlinks {% if request.resolver_match.url_name == 'extensions' %}active{% endif %}" href="{% url 'Titan_app:extensions' %}"><i class="fa fa-fw fa-project-diagram"></i>Extensão</a></li>
+        <li class="dropdown">
+          <a class="navlinks {% if request.resolver_match.url_name == 'extensions' %}active{% endif %}" href="{% url 'Titan_app:extensions' %}"><i class="fa fa-fw fa-project-diagram"></i>Extensão</a>
+          <div class="dropdown-content">
+            <a target="_blank" href="https://www.cometanordestino.org/" class="linkextensao">Cometa Nordestino</a>
+            <a target="_blank" href="https://www.instagram.com/titan_ufrn/" class="linkextensao">AstroTime</a>
+          </div>
+        </li>
         <li><a class="navlinks {% if request.resolver_match.url_name == 'team' %}active{% endif %}" href="{% url 'Titan_app:team'%}"><i class="fa fa-fw fa-users"></i>Time</a></li>
         <!-- <li><a class="navlinks"><i class="fa fa-fw fa-handshake"></i>Colaborador</a></li> -->
         {% if request.user.is_authenticated %}

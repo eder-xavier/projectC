@@ -121,6 +121,54 @@ nav a {
     transform-origin: left;
     transform: scaleX(1);
 }
+
+/* Container do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Conteúdo do dropdown */
+.dropdown-content {
+  margin-top: 3px;
+  display: none;
+  position: absolute;
+  background-color: #0000003b; /* Cor de fundo dos links no dropdown */
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+/* Estilo dos links no dropdown */
+.dropdown-content a {
+  margin-top: 10px;
+  color: white;
+  padding: 20px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+/* Efeito de hover nos links do dropdown */
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+/* Mostrar o conteúdo do dropdown quando o mouse estiver sobre o item pai */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo do link "Extensão" para manter consistência com outros links */
+.navlinks.dropdown:hover {
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.linkextensao{
+  font-size: 12px;
+}
+
   
 
   /*
