@@ -10,9 +10,8 @@ a{
     color: rgb(255, 151, 25);
     display: flex;
     width: 100%;
-    margin-bottom: 100px;
-    position: absolute;
-    top: 50%;
+    margin-bottom: 300px;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -83,6 +82,8 @@ article{
     border: 1px solid white;
     padding: 23px;
     border-radius: 10px;
+    position: relative;
+    display: block;
 }
 
 .titulo_publications_articles{
