@@ -38,7 +38,8 @@
     border-radius: 50%;
     height: 200px;
     width: 200px;
-    margin-right: 20px;
+    margin-right: 70px;
+    margin-left: 80px;
     margin-bottom: 20px;
 }
 
@@ -48,7 +49,8 @@
 }
 
 .extensions_text{
-    text-align: justify; 
+    text-align: justify;
+    font-size: 19px; 
     margin-bottom: 39px;
 }
 

@@ -141,6 +141,7 @@ STATICFILES_DIRS = [
     # Outros diretórios adicionais, se necessário
 ]
 
+
 ### DESCOMENTAR ESSA PARTE QUANDO ESTIVER EM PRODUÇÃO
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #STATIC_URL = '/static/'

@@ -11,6 +11,7 @@ urlpatterns = [
     path('publicacoes/', views.publications,  name='publications'),
     path('extensoes/', views.extensions,  name='extensions'),
     path('award_articles/', views.award_articles,  name='award_articles'),
+    path('team/', views.team, name='team'),
     #path('noticias/', views.public_news, name='news'),
 #
     #path('signup/', views.signup, name='signup'),
