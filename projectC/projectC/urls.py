@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Titan_app.urls')), 
     path('papers/tertiarycandidatescatalog/', include('Capp.urls', namespace='Capp')),
+    path('exoplanetas/', include('exoplanets_app.urls', namespace='exoplanets_app')),
 ]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

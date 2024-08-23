@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrassolar</title>
+    <link rel="stylesheet" href="{% static 'css/exoplanets_app/base.css' %}">
+</head>
+<body>
+    <div class="meteor-bg">
+        <div class="navbar">
+            <ul>
+                <li><a href="{% url 'exoplanets_app:home' %}">Home</a></li>
+                <li><a href="#">Detecção</a></li>
+                <li><a href="#">Exoplanetas</a></li>
+                <li><a href="#">Sistemas binários</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="meteor" style="--x: 0.1;"></div>
+        <div class="meteor" style="--x: 0.3;"></div>
+        <div class="meteor" style="--x: 0.5;"></div>
+        <div class="meteor" style="--x: 0.7;"></div>
+        <div class="meteor" style="--x: 0.9;"></div>
+
+    </div>
+
+    <!-- 
+    <footer class="footer-base">
+        <p>&copy; 2024 Extrassolar. Todos os direitos reservados.</p>
+    </footer>
+    -->
+
+    <script>
+        function createMeteor() {
+            const meteor = document.createElement('div');
+            meteor.classList.add('meteor');
+            meteor.style.left = Math.random() * 100 + 'vw';
+            meteor.style.animationDuration = Math.random() * 2 + 1 + 's';
+            document.querySelector('.meteor-bg').appendChild(meteor);
+    
+            setTimeout(() => {
+                meteor.remove();
+            }, 5000); // Remove the meteor after 5 seconds
+        }
+    
+        function generateMeteors() {
+            setInterval(createMeteor, 500); // Create a new meteor every 0.5 seconds
+        }
+    
+        window.onload = generateMeteors;
+    </script>
+    
+</body>
+</html>

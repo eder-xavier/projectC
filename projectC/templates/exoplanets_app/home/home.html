@@ -1,0 +1,124 @@
+{% extends 'exoplanets_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/exoplanets_app/home/home.css' %}">
+</head>
+<body>
+    
+    <main class="main_home">
+
+        <section class="home-section">
+            <article>
+                <h1 class="titulo_extrassolar">Extrassolar</h1>
+                <p>Encontre seu próprio Exoplaneta</p>
+        
+        
+                <p class="texto_inicial">
+                    <span>
+                        Nosso objetivo é guiá-lo na jornada de descobrir novos exoplanetas em sistemas binários.
+                        Através de métodos avançados de análise de dados, você poderá identificar possíveis
+                        variações que indicam a presença de um exoplaneta, desvendando os mistérios do cosmos.
+                    </span>
+                </p>
+        
+        
+                <div>
+                    <a class="a_text_btn_comece_agr" href="{% url 'exoplanets_app:listar_objetos' %}">
+                    <span class="btn_comece_agr">
+                        <span>Comece agora</span>
+                    </span>
+                    </a>
+                </div>
+        
+        
+            </article>
+        
+        
+            <article class="image-grid">
+                <div class="image-card">
+        
+                    <h2>Métodos</h2>
+                    <p class="texto_cards">
+                        <span>
+                            Explore os diferentes métodos que os cientistas utilizam para detectar exoplanetas,
+                            desde o trânsito até as variações de velocidade radial.
+                        </span>
+                    </p>
+                </div>
+                <div class="image-card">
+        
+                    <h2>Exoplanetas?</h2>
+                    <p class="texto_cards">
+                        <span>
+                            Exoplanetas são planetas que orbitam estrelas fora do nosso sistema solar.
+                            Saiba por que eles são tão importantes para a ciência e para a compreensão
+                            do universo.
+                        </span>
+                    </p>
+                </div>
+                <div class="image-card">
+        
+                    <h2>Sistemas Binários</h2>
+                    <p class="texto_cards">
+                        <span>
+                            Sistemas binários consistem em duas estrelas orbitando um centro comum.
+                            Entenda como suas dinâmicas complexas podem abrigar exoplanetas e o que
+                            isso significa para a astrofísica.
+                        </span>
+                    </p>
+                </div>
+                <div class="image-card">
+        
+                    <h2>Telescópios</h2>
+                    <p class="texto_cards">
+                        <span>
+                            Saiba mais sobre os Telescópios de onde vieram os dados que são utilizados para realizar
+                            a maioria das descobertas de exoplanetas atualmente.
+                        </span>
+                    </p>
+                </div>
+            </article>
+        
+        </section>
+        <section class="roadmap-section">
+            <h2>Como Funciona</h2>
+            <article class="roadmap-steps">
+                <div class="roadmap-step">
+                    <div class="step-number">1</div>
+                    <h3>Escolha um Sistema Binário</h3>
+                    <p>Selecione um sistema binário de uma lista baseada em dados reais do telescópio Kepler.</p>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-number">2</div>
+                    <h3>Analise o Fluxo de Luz</h3>
+                    <p>Observe as curvas de luz e normalize os dados para detectar possíveis eclipses e variações.</p>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-number">3</div>
+                    <h3>Detecte Variações no Eclipse</h3>
+                    <p>Identifique variações no tempo de eclipse que podem indicar a presença de um exoplaneta.</p>
+                </div>
+                <div class="roadmap-step">
+                    <div class="step-number">4</div>
+                    <h3>Encontre seu Exoplaneta</h3>
+                    <p>Com base nos dados analisados, descubra se há indícios de um novo exoplaneta em potencial.</p>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+
+</body>
+</html>
+
+
+
+{% endblock %}

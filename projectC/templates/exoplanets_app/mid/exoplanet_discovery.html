@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu Exoplaneta</title>
+    <style>
+        .loading-spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra seu Exoplaneta</h1>
+
+    <form id="kepler-form" method="POST">
+        {% csrf_token %}
+        <label for="kepler_id">Identificador do Sistema Kepler (KIC):</label>
+        <input type="text" id="kepler_id" name="kepler_id" required placeholder="Ex: 11446443">
+        <button type="submit" onclick="processStep('generate_lightcurve')">Gerar Curva de Luz</button>
+    </form>
+    
+    
+
+    <div id="loading-spinner" class="loading-spinner"></div>
+
+    <div id="lightcurve-container" class="hidden">
+        <h3>Curva de Luz Original</h3>
+        <img id="lightcurve_plot" alt="Curva de Luz Original">
+        <button type="submit" onclick="processStep('estimate_period')">Estimar Período</button>
+    </div>
+
+    <div id="period-container" class="hidden">
+        <p><strong>Período Estimado:</strong> <span id="best_period"></span> dias</p>
+        <h3>Periodograma BLS</h3>
+        <img id="periodogram_plot" alt="Periodograma BLS">
+        <button type="submit" onclick="processStep('identify_exoplanet')">Identificar Exoplaneta</button>
+    </div>
+
+    <div id="folded-container" class="hidden">
+        <h3>Curva de Luz Dobrada</h3>
+        <img id="folded_lightcurve_plot" alt="Curva de Luz Dobrada">
+    </div>
+
+    <script>
+        function showLoading() {
+            document.getElementById('loading-spinner').style.display = 'block';
+        }
+    
+        function hideLoading() {
+            document.getElementById('loading-spinner').style.display = 'none';
+        }
+    
+        function processStep(step) {
+        showLoading();
+        const formData = new FormData(document.getElementById('kepler-form'));
+        const keplerId = formData.get('kepler_id');
+
+        if (!keplerId) {
+            hideLoading();
+            alert('Por favor, forneça um identificador Kepler válido.');
+            return;
+        }
+
+        let url = "";
+        if (step === 'generate_lightcurve') {
+            url = "{% url 'exoplanets_app:generate_lightcurve' %}";
+        } else if (step === 'estimate_period') {
+            url = "{% url 'exoplanets_app:estimate_period' %}";
+        } else if (step === 'identify_exoplanet') {
+            url = "{% url 'exoplanets_app:identify_exoplanet' %}";
+        }
+
+        fetch(url, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            hideLoading();
+            if (data.error) {
+                alert(data.error);
+            } else {
+                if (step === 'generate_lightcurve') {
+                    document.getElementById('lightcurve_plot').src = 'data:image/png;base64,' + data.lightcurve_plot;
+                    document.getElementById('lightcurve-container').classList.remove('hidden');
+                } else if (step === 'estimate_period') {
+                    document.getElementById('best_period').innerText = data.best_period;
+                    document.getElementById('periodogram_plot').src = 'data:image/png;base64,' + data.periodogram_plot;
+                    document.getElementById('period-container').classList.remove('hidden');
+                } else if (step === 'identify_exoplanet') {
+                    document.getElementById('folded_lightcurve_plot').src = 'data:image/png;base64,' + data.folded_lightcurve_plot;
+                    document.getElementById('folded-container').classList.remove('hidden');
+                }
+            }
+        })
+        .catch(error => {
+            hideLoading();
+            alert('Ocorreu um erro: ' + error.message);
+        });
+    }
+
+    </script>
+    
+</body>
+</html>

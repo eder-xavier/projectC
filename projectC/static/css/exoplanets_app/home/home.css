@@ -1,0 +1,131 @@
+
+
+
+.titulo_extrassolar{
+    color: #ffdd57;
+    font-size: 39px;
+    letter-spacing: 2.5px;
+}
+
+
+.texto_inicial{
+    
+    width: 600px;
+    text-align: justify;
+    line-height: 1.5;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.a_text_btn_comece_agr{
+    text-decoration: none;
+}
+
+.btn_comece_agr{
+    padding: 9px;
+    border-radius: 6px;
+    /* background: radial-gradient(circle at center, red 0, blue, green 100%); */
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffdd57;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    -webkit-box-shadow: 5px 5px 2.5px 0px rgba(255,255,255,1);
+    -moz-box-shadow: 5px 5px 2.5px 0px rgba(255,255,255,1);
+    box-shadow: 3px 3px 2px 0px rgba(255,255,255,1);
+}
+
+.btn_comece_agr:hover{
+    opacity: 0.89;
+    border: 1px solid #004080;
+
+    /*transform: scale(1.2);*/
+    transform: translateY(1px);
+}
+
+
+.home-section {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.image-card {
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+.texto_cards{
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.image-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+.roadmap-section {
+    margin-top: 50px;
+    padding: 50px 0;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.roadmap-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ffdd57;
+}
+
+.roadmap-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.roadmap-step {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 200px;
+    color: white;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 24px;
+    background: #0073e6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto 15px;
+}
+
+.roadmap-step h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffdd57;
+}
+
+.roadmap-step p {
+    font-size: 16px;
+    color: #ddd;
+}

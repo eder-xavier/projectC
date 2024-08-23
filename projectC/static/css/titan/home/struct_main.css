@@ -190,7 +190,7 @@ nav a {
   }
 
   .main-content {
-    position: relative; /* Garante que outros elementos respeitem o espaço ocupado pelo vídeo */
+    position: relative; 
     /*padding-top: 10px;  Ajuste conforme necessário para evitar sobreposição do conteúdo sobre o vídeo */
   }
 
@@ -299,7 +299,7 @@ nav a {
     text-decoration: none;
 }
 
-  /* Estilização da barra de rolagem */
+
 ::-webkit-scrollbar {
   width: 7px; /* Largura da barra de rolagem */
 }
@@ -378,6 +378,5 @@ nav a {
 
 
   }
-  
-  /* Adicione estilos adicionais conforme necessário */
+
   

@@ -1,0 +1,112 @@
+{% extends 'exoplanets_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Curvas de Luz</title>
+    <link rel="stylesheet" href="{% static 'css/exoplanets_app/mid/analisar_curvas.css' %}">
+    <style>
+        .spinner {
+            border: 4px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <main class="main_analise_curvas">
+        <div class="analyze-light-curves">
+            <h1>Análise de Curvas de Luz</h1>
+            <p>Insira o identificador do sistema binário para gerar a curva de luz e identificar possíveis exoplanetas. A curva de luz será normalizada para facilitar a detecção de variações.</p>
+        
+            <form id="light-curve-form" method="get">
+                <label for="identifier">Identificador do Sistema Binário:</label>
+                <input type="text" id="identifier" name="identifier" value="{{ identifier }}" required>
+        
+                <button type="submit">Gerar Curva de Luz</button>
+            </form>
+            
+            {% if error_message %}
+                <div class="error-message">{{ error_message }}</div>
+            {% endif %}
+    
+            <div id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Gerando Curva de Luz... Isso pode levar até 1 minuto</p>
+            </div>
+    
+            {% if graphic %}
+            <div id="light-curve-plot" style="text-align: center; background-color: #f0f0f0; padding: 10px; margin-top: 20px;">
+                <img src="data:image/png;base64,{{ graphic }}" alt="Light Curve Plot" style="max-width: 100%; height: auto;">
+            </div>
+    
+            <p>A curva de luz mostra a variação de brilho da estrela ao longo do tempo. As variações podem indicar a presença de um exoplaneta.</p>
+            {% endif %}
+    
+            {% if phase_curve_graphic %}
+            <div id="phase-curve-plot" style="text-align: center; background-color: #f0f0f0; padding: 10px; margin-top: 20px;">
+                <img src="data:image/png;base64,{{ phase_curve_graphic }}" alt="Curva de Luz em Fase" style="max-width: 100%; height: auto;">
+            </div>
+    
+            <p>A curva de luz em fase mostra a variação de brilho da estrela ao longo de um período orbital completo. Esta análise é crucial para identificar variações periódicas.</p>
+            {% endif %}
+    
+            {% if phase_curve_graphic %}
+            <form id="ttv-form" method="post" action="">
+                {% csrf_token %}
+                <button type="submit" name="generate_oc_diagram" onclick="showTTVLoading()">Analisar TTV</button>
+            </form>
+            {% endif %}
+    
+            <div id="ttv-loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analisando TTV... Isso pode levar alguns minutos</p>
+            </div>
+    
+            {% if ttv_results %}
+            <div id="ttv-results">
+                <h2>Resultados da Análise de TTV</h2>
+                <p><strong>Eclipses Detectados:</strong> {{ ttv_results.eclipses }}</p>
+                <p><strong>Intervalos Esperados:</strong> {{ ttv_results.expected_intervals }}</p>
+                <p><strong>Variações Observadas:</strong> {{ ttv_results.observed_intervals }}</p>
+                <p><strong>TTV:</strong> {{ ttv_results.ttv }}</p>
+    
+                <div id="oc-diagram" style="text-align: center; background-color: #f0f0f0; padding: 10px; margin-top: 20px;">
+                    <img src="data:image/png;base64,{{ oc_diagram }}" alt="O-C Diagram" style="max-width: 100%; height: auto;">
+                </div>
+    
+                <p>O diagrama O-C mostra as variações no tempo dos eclipses. Anomalias significativas podem indicar a presença de exoplanetas.</p>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+
+<script>
+    function showPhaseCurveLoading() {
+        document.getElementById('phase-curve-loading').style.display = 'block';
+    }
+
+    function showTTVLoading() {
+        document.getElementById('ttv-loading').style.display = 'block';
+    }
+
+    document.getElementById('light-curve-form').onsubmit = function() {
+        document.getElementById('loading').style.display = 'block';
+    };
+</script>
+{% endblock %}
+</body>
+</html>

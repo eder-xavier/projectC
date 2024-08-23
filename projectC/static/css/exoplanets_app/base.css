@@ -1,0 +1,79 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+.meteor-bg {
+    background: linear-gradient(to bottom, #001a4d, #003366, #004080, #0059b3, #0073e6);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    color: #ffdd57;
+}
+
+/*
+.footer-base{
+    display: flex;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+*/
+.meteor {
+    
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(white, rgba(255, 255, 255, 0));
+    opacity: 0.7;
+    animation: fall 4s linear infinite;
+    transform: rotate(1deg); /* Inclinação para simular a queda diagonal */
+}
+
+
+
+@keyframes fall {
+    from {
+        transform: translateY(-150vh) translateX(0) rotate(-45deg);
+    }
+    to {
+        transform: translateY(100vh) translateX(100vw) rotate(-45deg);
+    }
+}
+
