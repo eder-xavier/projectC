@@ -25,8 +25,8 @@
             <br>
             <br>
             Além de identificar esses trânsitos, nosso sistema também estima
-            o período orbital do exoplaneta. O período é o tempo que o exoplaneta leva para completar
-            uma órbita ao redor de sua estrela. A estimativa do período é crucial, pois permite prever
+            o período orbital da estrela. O período é o tempo que a estrela leva para completar
+            uma órbita ao redor de seu centro de massa. A estimativa do período é crucial, pois permite prever
             quando o próximo trânsito ocorrerá, facilitando a observação e a confirmação da presença do exoplaneta.
             Conhecer o período também é fundamental para determinar as propriedades orbitais do exoplaneta,
             como a distância média da estrela, o que ajuda a compreender melhor a dinâmica do sistema estelar e a
@@ -45,12 +45,20 @@
         <div id="progress-bar">
             <div id="progress-bar-fill"></div>
         </div>
+
         
-        <div id="result" class="result-section">
+        
+        <div id="result" class="result-section" style="display:none;" >
+            
             <h2>Período: <span id="period"></span></h2>
             <img id="lightcurve-plot" src="" alt="Gráfico da Curva de Luz" style="display:none;">
-            <a id="download-btn" href="" download="lightcurve.png"><button class="btn-download">Download Gráfico</button></a>
+            <a id="download-btn" href="" download="lightcurve.png">
+                <button class="btn-download">Download Gráfico</button>
+            </a>
+            
         </div>
+
+        
         
         <div id="examples" class="examples-section">
             <h2>Exemplos</h2>
