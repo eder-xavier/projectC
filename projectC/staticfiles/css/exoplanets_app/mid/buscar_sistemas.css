@@ -1,0 +1,66 @@
+
+
+.main_sistemas{
+    padding-top: 100px;
+}
+
+.sistema_container{
+    padding: 20px;
+    width: 400px;
+
+    text-align: justify;
+    line-height: 1.5;
+
+    background: rgba(44, 39, 65, 0.649);
+    border-radius: 16px;
+
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: aliceblue;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ol {
+    margin-top: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+

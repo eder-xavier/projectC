@@ -12,38 +12,41 @@
 </head>
 <body>
     
+    <div class="hero-section">
+        <img src="{% static 'img/exoplanets_app/home/kepler_background.jpg' %}" alt="Exoplaneta" class="hero-image">
+        <div class="hero-text">
+            <h1 class="titulo_extrassolar">Extrassolar</h1>
+            <p>Encontre seu próprio candidato a exoplaneta</p>
+        </div>
+    </div>
+
     <main class="main_home">
 
         <section class="home-section">
+
+            <p class="inicial_credits">Créditos da imagem: NASA/Wendy Stenzel/Daniel Rutter</p>
+
             <article>
-                <h1 class="titulo_extrassolar">Extrassolar</h1>
-                <p>Encontre seu próprio Exoplaneta</p>
-        
-        
-                <p class="texto_inicial">
-                    <span>
-                        Nosso objetivo é guiá-lo na jornada de descobrir novos exoplanetas em sistemas binários.
-                        Através de métodos avançados de análise de dados, você poderá identificar possíveis
-                        variações que indicam a presença de um exoplaneta, desvendando os mistérios do cosmos.
-                    </span>
-                </p>
-        
-        
+                <div class="div_texto_inicial">
+                    <p class="texto_inicial">
+                        Nosso objetivo é guiá-lo na jornada de descobrir novos exoplanetas.
+                        Utilizando o método de trânsito fotométrico, você poderá identificar quedas na luminosidade
+                        de estrelas que indicam a passagem de um exoplaneta à sua frente, revelando a presença
+                        desses corpos celestes em sistemas distantes.
+                    </p>
+                </div>
+
                 <div>
                     <a class="a_text_btn_comece_agr" href="{% url 'exoplanets_app:listar_objetos' %}">
-                    <span class="btn_comece_agr">
-                        <span>Comece agora</span>
-                    </span>
+                        <span class="btn_comece_agr">
+                            <span class="btn_comece_agr_text">Comece agora</span>
+                        </span>
                     </a>
                 </div>
-        
-        
             </article>
-        
-        
+
             <article class="image-grid">
                 <div class="image-card">
-        
                     <h2>Métodos</h2>
                     <p class="texto_cards">
                         <span>
@@ -51,20 +54,25 @@
                             desde o trânsito até as variações de velocidade radial.
                         </span>
                     </p>
+                    <div>
+                        <a class="a_text_btn_comece_agr" href="{% url 'exoplanets_app:listar_objetos' %}">
+                            <span class="btn_comece_agr">
+                                <span class="btn_comece_agr_text">Saiba mais</span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
                 <div class="image-card">
-        
                     <h2>Exoplanetas?</h2>
                     <p class="texto_cards">
                         <span>
-                            Exoplanetas são planetas que orbitam estrelas fora do nosso sistema solar.
+                            Exoplanetas ou planetas extrassolares são planetas que orbitam estrelas fora do nosso sistema solar.
                             Saiba por que eles são tão importantes para a ciência e para a compreensão
                             do universo.
                         </span>
                     </p>
                 </div>
                 <div class="image-card">
-        
                     <h2>Sistemas Binários</h2>
                     <p class="texto_cards">
                         <span>
@@ -75,50 +83,54 @@
                     </p>
                 </div>
                 <div class="image-card">
-        
                     <h2>Telescópios</h2>
                     <p class="texto_cards">
                         <span>
-                            Saiba mais sobre os Telescópios de onde vieram os dados que são utilizados para realizar
-                            a maioria das descobertas de exoplanetas atualmente.
+                            Os telescópios espaciais de onde vieram os dados que são utilizados para realizar
+                            a maioria das descobertas de exoplanetas atualmente são os telescópios TESS e kepler.
+                            Utilizamos dados do Kepler em nosso workspace.
                         </span>
                     </p>
                 </div>
             </article>
-        
         </section>
+        
         <section class="roadmap-section">
             <h2>Como Funciona</h2>
             <article class="roadmap-steps">
                 <div class="roadmap-step">
                     <div class="step-number">1</div>
-                    <h3>Escolha um Sistema Binário</h3>
-                    <p>Selecione um sistema binário de uma lista baseada em dados reais do telescópio Kepler.</p>
+                    <h3>Escolha um Sistema</h3>
+                    <p>Selecione um sistema de uma lista baseada em dados reais do telescópio Kepler.</p>
                 </div>
                 <div class="roadmap-step">
                     <div class="step-number">2</div>
-                    <h3>Analise o Fluxo de Luz</h3>
-                    <p>Observe as curvas de luz e normalize os dados para detectar possíveis eclipses e variações.</p>
+                    <h3>Analise a Curva de Luz</h3>
+                    <p>Observe as curvas de luz resultantes dos dados do telescópio e normalize os valores para
+                       identificar possíveis quedas de luminosidade causadas pelo trânsito de exoplanetas.</p>
                 </div>
                 <div class="roadmap-step">
                     <div class="step-number">3</div>
-                    <h3>Detecte Variações no Eclipse</h3>
-                    <p>Identifique variações no tempo de eclipse que podem indicar a presença de um exoplaneta.</p>
+                    <h3>Detecte Trânsitos</h3>
+                    <p>Identifique trânsitos em que a luz da estrela é bloqueada parcialmente por um exoplaneta em órbita,
+                       sugerindo a presença de um novo exoplaneta.</p>
                 </div>
                 <div class="roadmap-step">
                     <div class="step-number">4</div>
                     <h3>Encontre seu Exoplaneta</h3>
-                    <p>Com base nos dados analisados, descubra se há indícios de um novo exoplaneta em potencial.</p>
+                    <p>Com base nos dados analisados, descubra se há indícios de um exoplaneta em potencial,
+                       revelando novos mundos além do nosso sistema solar.</p>
                 </div>
             </article>
         </section>
 
     </main>
 
+    <footer class="footer-base">
+        <p>&copy; 2024 Extrassolar. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
-
-
 
 {% endblock %}

@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import lightkurve as lk
-import io
 import base64
 import matplotlib.pyplot as plt
 import numpy as np
 import logging
-import time  # Para simular o tempo de processamento
+from io import BytesIO
 
 # Configurando o logger
 logger = logging.getLogger(__name__)
@@ -17,83 +16,79 @@ def home(request):
 def listar_objetos(request):
     return render(request, 'exoplanets_app/mid/sistemas.html')
 
-def exoplanet_discovery(request):
-    return render(request, 'exoplanets_app/mid/exoplanet_discovery.html')
 
-def generate_lightcurve(request):
+def detection_methods(request):
+    return render(request, 'exoplanets_app/mid/detection_methods.html')
+
+
+
+def lightcurve_analysis(request):
     if request.method == 'POST':
+        kepler_id = None
+        pixelfile = None
+        lc = None
+        lc_subsampled = None
+        period = None
+        folded_lc = None
+
         kepler_id = request.POST.get('kepler_id')
-        logger.info(f"Identificador Kepler recebido: {kepler_id}")  # Log para verificar o valor do identificador
-
+        
         if not kepler_id:
-            logger.error("Identificador Kepler não foi fornecido.")
-            return JsonResponse({'error': 'Por favor, forneça um identificador Kepler válido.'})
+            return JsonResponse({'error': 'Kepler ID is required.'}, status=400)
 
         try:
-            logger.info("Iniciando a busca pela curva de luz...")
-            search_result = lk.search_lightcurve(f'KIC {kepler_id}', mission='Kepler')
-            logger.info(f"Resultados da busca: {search_result}")
+            # Buscar arquivos de pixels para o Kepler ID fornecido
+            search_result = lk.search_targetpixelfile(kepler_id, mission='Kepler')
+            
+            # Verificar se existem múltiplos arquivos e, se necessário, selecionar o primeiro disponível
+            if len(search_result) > 1:
+                pixelfile = search_result[0].download() 
+            else:
+                pixelfile = search_result.download()
+            
+            # Verificar se o arquivo de pixels contém dados válidos
+            if pixelfile is None or pixelfile.hdu[1].data.size == 0:
+                return JsonResponse({'error': 'No valid data found for the provided Kepler ID.'}, status=404)
+            
+            # Tentar gerar a curva de luz
+            try:
+                lc = pixelfile.to_lightcurve(method="pld").remove_outliers().flatten()
+            except Exception as e:
+                return JsonResponse({'error': f'Error in light curve correction: {str(e)}'}, status=500)
 
-            if len(search_result) == 0:
-                logger.error("Nenhum dado encontrado para o identificador Kepler fornecido.")
-                return JsonResponse({'error': 'Nenhum dado encontrado para o identificador Kepler fornecido.'})
+            # Verificar se a curva de luz contém dados válidos
+            if lc is None or lc.flux.size == 0:
+                return JsonResponse({'error': 'Light curve could not be generated or contains no data.'}, status=500)
 
-            logger.info("Baixando e processando os dados da curva de luz...")
-            lc = search_result.download_all().stitch().remove_nans().remove_outliers()
-            flat_lc = lc.flatten()
-            lightcurve_plot = plot_to_base64(flat_lc)
-            request.session['flat_lc'] = flat_lc.to_table().as_array().tolist()
+            # Subamostragem da curva de luz
+            lc_subsampled = lc[::10]
 
-            logger.info("Curva de luz gerada com sucesso.")
-            return JsonResponse({'lightcurve_plot': lightcurve_plot})
+            # Calcular o período e plotar a curva de luz subamostrada
+            period = lc_subsampled.to_periodogram("bls").period_at_max_power
+            folded_lc = lc_subsampled.fold(period)
+
+            # Plotar e salvar o gráfico em formato base64 para exibir na web
+            plt.figure(figsize=(10, 6))
+            folded_lc.scatter()
+            plt.title(f"Curva de luz para: {kepler_id}")
+            plt.xlabel("BJD 2458679+")
+            plt.ylabel("Fluxo Normalizado")
+            
+            # Converter o gráfico para uma string base64
+            buffer = BytesIO()
+            plt.savefig(buffer, format='png')
+            buffer.seek(0)
+            image_png = buffer.getvalue()
+            buffer.close()
+            graphic = base64.b64encode(image_png).decode('utf-8')
+            plt.close()
+
+            return JsonResponse({
+                'graphic': graphic,
+                'period': str(period)
+            })
+
         except Exception as e:
-            logger.exception("Erro ao processar a curva de luz.")
-            return JsonResponse({'error': f'Ocorreu um erro ao processar os dados: {str(e)}'})
+            return JsonResponse({'error': str(e)}, status=500)
 
-def estimate_period(request):
-    if request.method == 'POST':
-        try:
-            logger.info("Iniciando a estimativa do período...")
-            flat_lc_data = request.session['flat_lc']
-            flat_lc = lk.LightCurve(data=flat_lc_data)
-
-            periodogram = flat_lc.to_periodogram(method="bls", period=np.linspace(0.5, 30, 10000))
-            best_period = periodogram.period_at_max_power
-            periodogram_plot = plot_to_base64(periodogram)
-            request.session['best_period'] = best_period.value
-
-            logger.info(f"Período estimado: {best_period.value} dias")
-            return JsonResponse({'periodogram_plot': periodogram_plot, 'best_period': round(best_period.value, 4)})
-        except Exception as e:
-            logger.exception("Erro ao estimar o período.")
-            return JsonResponse({'error': f'Ocorreu um erro ao processar os dados: {str(e)}'})
-
-def identify_exoplanet(request):
-    if request.method == 'POST':
-        try:
-            logger.info("Iniciando a identificação do exoplaneta...")
-            flat_lc_data = request.session['flat_lc']
-            flat_lc = lk.LightCurve(data=flat_lc_data)
-            best_period = request.session['best_period']
-
-            folded_lc = flat_lc.fold(period=best_period)
-            folded_lightcurve_plot = plot_to_base64(folded_lc)
-
-            logger.info("Curva de luz dobrada gerada com sucesso.")
-            return JsonResponse({'folded_lightcurve_plot': folded_lightcurve_plot})
-        except Exception as e:
-            logger.exception("Erro ao identificar o exoplaneta.")
-            return JsonResponse({'error': f'Ocorreu um erro ao processar os dados: {str(e)}'})
-
-def plot_to_base64(plot_data):
-    logger.info("Gerando gráfico em base64...")
-    buffer = io.BytesIO()
-    plot_data.plot()
-    plt.savefig(buffer, format='png')
-    plt.close()
-    buffer.seek(0)
-    image_png = buffer.getvalue()
-    buffer.close()
-    graphic = base64.b64encode(image_png).decode('utf-8')
-    logger.info("Gráfico gerado com sucesso.")
-    return graphic
+    return render(request, 'exoplanets_app/mid/lightcurve_form.html')

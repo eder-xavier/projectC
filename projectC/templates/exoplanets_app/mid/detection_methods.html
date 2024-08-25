@@ -1,0 +1,159 @@
+{% extends 'exoplanets_app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/exoplanets_app/mid/detection_methods.css' %}">
+</head>
+<body>
+    <main class="detection-container">
+        <h1>Métodos de Detecção de Exoplanetas</h1>
+    
+        <section class="method">
+            <h2>Trânsito Fotométrico</h2>
+            <article class="media">
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/transito_fotometrico/image-trasito.jpg' %}" alt="Trânsito Fotométrico">
+                    <p class="creditos-figs">Créditos da figura: ESA</p>
+                </div>
+                <div class="media-item">
+                    <video id="video-transito" loop autoplay muted>
+                        <source src="{% static 'img/exoplanets_app/mid/detec_met/transito_fotometrico/videotransito.mp4' %}" type="video/mp4">
+                        Seu navegador não suporta o elemento video.
+                    </video>
+                    <p class="creditos-figs">Créditos da figura: NASA</p>
+                </div>
+            </article>
+            <p class="legend_method">
+                O método de Trânsito Fotométrico envolve a observação da diminuição de brilho de uma
+                estrela à medida que um planeta passa em frente a ela, bloqueando parte de sua luz.
+                Isso permite determinar o tamanho do planeta e sua órbita. Esse é o método que
+                utilizamos na nossa plataforma e é o meio que mais descobriu exoplaentas até hoje.
+            </p>
+        </section>
+    
+        <section class="method">
+            <h2>Variações nos Instantes dos Eclipses</h2>
+            <article class="media">
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/timing-variations/ltt_image.jpg' %}" alt="Variações nos Instantes dos Eclipses">
+                    <p class="creditos-figs">Créditos da figura: ESA</p>
+                </div>
+                <div class="media-item">
+                    <video id="video_variations" loop autoplay muted>
+                        <source src="{% static 'img/exoplanets_app/mid/detec_met/timing-variations/variations.mp4' %}" type="video/mp4">
+                        Seu navegador não suporta o elemento video.
+                    </video>
+                    <p class="creditos-figs">Créditos da figura: NASA</p>
+                </div>
+            </article>
+            <p class="legend_method">
+                Esse método detecta exoplanetas ao medir variações no tempo dos eclipses de estrelas
+                binárias causadas pela influência gravitacional de um planeta próximo.
+            </p>
+        </section>
+    
+        <section class="method">
+            <h2>Astrometria</h2>
+            <article class="media">
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/astrometry/astromeytyM.jpg' %}" alt="Astrometria">
+                    <p class="creditos-figs">Créditos da figura: ESA</p>
+                </div>
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/astrometry/astrometry_physicsfeed.gif' %}" alt="Astrometria">
+                    <p class="creditos-figs">Créditos da figura: NASA</p>
+                </div>
+            </article>
+            <p class="legend_method">
+                Astrometria é o método de detecção que mede pequenas variações no movimento de
+                uma estrela em resposta à atração gravitacional de um planeta em órbita.
+                Este método é eficaz para detectar planetas massivos.
+            </p>
+        </section>
+    
+        <section class="method">
+            <h2>Imageamento Direto</h2>
+            <article class="media">
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/imageamento_direto/imagingD.jpg' %}" alt="Imageamento Direto">
+                    <p class="creditos-figs">Créditos da figura: ESA</p>
+                </div>
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/imageamento_direto/direct_imaging_nasa.gif' %}" alt="Imageamento Direto">
+                    <p class="creditos-figs">Créditos da figura: NASA</p>
+                </div>
+            </article>
+            <p class="legend_method">
+                O Imageamento Direto envolve a captura de imagens reais de exoplanetas
+                ao bloquear a luz da estrela-mãe, permitindo a observação direta dos
+                planetas ao redor dela.
+            </p>
+        </section>
+    
+        <section class="method">
+            <h2>Microlentes Gravitacionais</h2>
+            <article class="media">
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/microlentes/microlensingM.jpg' %}" alt="Microlentes Gravitacionais">
+                    <p class="creditos-figs">Créditos da figura: ESA</p>
+                </div>
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/microlentes/microlensing-graphic.gif' %}" alt="Microlentes Gravitacionais">
+                    <p class="creditos-figs">Créditos da figura: NASA</p>
+                </div>
+            </article>
+            <p class="legend_method">
+                Microlentes Gravitacionais ocorrem quando a gravidade de um planeta age
+                como uma lente, ampliando a luz de uma estrela distante. Este método
+                é útil para detectar planetas que estão longe de sua estrela-mãe.
+            </p>
+        </section>
+    
+        <section class="method">
+            <h2>Velocidade Radial</h2>
+            <article class="media">
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/radial_velocity/radial_velocityR.jpg' %}" alt="Velocidade Radial">
+                    <p class="creditos-figs">Créditos da figura: ESA</p>
+                </div>
+                <div class="media-item">
+                    <img src="{% static 'img/exoplanets_app/mid/detec_met/radial_velocity/platomission_radialvelocity.gif' %}" alt="Velocidade Radial">
+                    <p class="creditos-figs">Créditos da figura: Plato Mission</p>
+                </div>
+            </article>
+            <p class="legend_method">
+                Velocidade Radial mede as mudanças na velocidade de uma estrela ao
+                longo da linha de visão devido ao puxão gravitacional de um planeta,
+                permitindo a detecção de planetas orbitando estrelas.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer-base">
+        <p>&copy; 2024 Extrassolar. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const video = document.getElementById('video_variations');
+    
+        // Acelerar o vídeo em 3x ao carregar
+        video.playbackRate = 3;
+    
+        // Função para alterar a velocidade
+        function alterarVelocidade(novaVelocidade) {
+            video.playbackRate = novaVelocidade;
+        }
+    </script>
+</body>
+</html>
+
+{% endblock %}

@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="{% static 'css/exoplanets_app/base.css' %}">
 </head>
 <body>
-    <div class="meteor-bg">
-        <div class="navbar">
+    <main class="meteor-bg">
+        <nav class="navbar">
             <ul>
                 <li><a href="{% url 'exoplanets_app:home' %}">Home</a></li>
-                <li><a href="#">Detecção</a></li>
-                <li><a href="#">Exoplanetas</a></li>
-                <li><a href="#">Sistemas binários</a></li>
+                <li><a href="{% url 'exoplanets_app:detection_methods' %}">Detecção</a></li>
+                <li><a href="{% url 'exoplanets_app:listar_objetos' %}">Catálogos</a></li>
+                <li><a href="{% url 'exoplanets_app:lightcurve_analysis' %}">Workspace</a></li>
             </ul>
-        </div>
+        </nav>
 
-        <div class="content">
+        <section class="content">
             {% block content %}
             {% endblock %}
-        </div>
+        </section>
 
         <div class="meteor" style="--x: 0.1;"></div>
         <div class="meteor" style="--x: 0.3;"></div>
@@ -30,13 +30,12 @@
         <div class="meteor" style="--x: 0.7;"></div>
         <div class="meteor" style="--x: 0.9;"></div>
 
-    </div>
 
-    <!-- 
-    <footer class="footer-base">
-        <p>&copy; 2024 Extrassolar. Todos os direitos reservados.</p>
-    </footer>
-    -->
+    </main>
+
+
+
+
 
     <script>
         function createMeteor() {
@@ -52,7 +51,7 @@
         }
     
         function generateMeteors() {
-            setInterval(createMeteor, 500); // Create a new meteor every 0.5 seconds
+            setInterval(createMeteor, 600); // Create a new meteor every 0.6 seconds
         }
     
         window.onload = generateMeteors;

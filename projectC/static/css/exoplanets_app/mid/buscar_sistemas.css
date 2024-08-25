@@ -1,9 +1,20 @@
 
 
-.sistema_container{
+.main_sistemas{
     padding-top: 100px;
-    background: linear-gradient(to bottom, #001a4d, #003366, #004080, #0059b3, #0073e6);
-    height: 100vh;
+}
+
+.sistema_container{
+    padding: 20px;
+    width: 400px;
+
+    text-align: justify;
+    line-height: 1.5;
+
+    background: rgba(44, 39, 65, 0.649);
+    border-radius: 16px;
+
+    margin: 0 auto;
     overflow: hidden;
 }
 

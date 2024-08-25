@@ -103,6 +103,7 @@ kiwisolver
 kombu
 libmagic
 lief
+lightkurve
 lmfit
 lockfile
 MarkupSafe

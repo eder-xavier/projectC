@@ -1,19 +1,79 @@
 
+/* home.css */
 
-
-.titulo_extrassolar{
-    color: #ffdd57;
-    font-size: 39px;
-    letter-spacing: 2.5px;
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 600px; 
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    text-align: center;
+
+    padding: 8px;
+
+    
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.9px);
+    -webkit-backdrop-filter: blur(2.9px);
+}
+
+.hero-text h1 {
+    font-size: 3em; 
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+
+    /* Primeiro passo: definir um degradê como fundo 
+    background-image: linear-gradient(to bottom, #05006a, rgb(232, 232, 241), rgb(228, 228, 231));*/
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+    
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: rgb(244, 244, 244);
+}
+
+.hero-text p {
+    font-size: 16px; 
+    margin: 0;
+
+}
+
+.inicial_credits{
+    font-size: 12px;
+}
 
 .texto_inicial{
-    
-    width: 600px;
+
     text-align: justify;
-    line-height: 1.5;
+    line-height: 2;
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.div_texto_inicial{
+    position: relative;
+    width: 600px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -27,9 +87,11 @@
     padding: 9px;
     border-radius: 6px;
     /* background: radial-gradient(circle at center, red 0, blue, green 100%); */
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(44, 39, 65, 0.649);
+
     color: #ffdd57;
-    font-weight: bold;
+
+
     text-decoration: none;
     letter-spacing: 2px;
     -webkit-box-shadow: 5px 5px 2.5px 0px rgba(255,255,255,1);
@@ -37,9 +99,12 @@
     box-shadow: 3px 3px 2px 0px rgba(255,255,255,1);
 }
 
+.btn_comece_agr_txt{
+    color: #ffdd57;
+}
+
 .btn_comece_agr:hover{
     opacity: 0.89;
-    border: 1px solid #004080;
 
     /*transform: scale(1.2);*/
     transform: translateY(1px);
@@ -48,7 +113,6 @@
 
 .home-section {
     text-align: center;
-    padding-top: 100px;
 }
 
 .image-grid {
@@ -60,11 +124,15 @@
 
 .image-card {
     margin: 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(44, 39, 65, 0.649);
     padding: 15px;
     border-radius: 10px;
     width: 250px;
     text-align: center;
+}
+
+.image-card h2{
+    color: #ffdd57;
 }
 
 .texto_cards{
@@ -78,12 +146,10 @@
 }
 
 
-
-
 .roadmap-section {
     margin-top: 50px;
     padding: 50px 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to bottom, #02000c, #030013, #030012, #02001a, #030012);
     text-align: center;
 }
 
@@ -111,7 +177,7 @@
 
 .step-number {
     font-size: 24px;
-    background: #0073e6;
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210),  rgb(238, 238, 241));
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -123,9 +189,34 @@
     font-size: 20px;
     margin-bottom: 15px;
     color: #ffdd57;
+
+    /*
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo 
+    
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele 
+    -webkit-text-fill-color: transparent;
+    
+    Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
 }
 
 .roadmap-step p {
     font-size: 16px;
     color: #ddd;
+}
+
+
+@media screen and (width < 700px){
+    .div_texto_inicial{
+        width: 400px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        min-height: 400px; 
+    }
 }

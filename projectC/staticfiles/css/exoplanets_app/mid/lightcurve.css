@@ -1,0 +1,202 @@
+/* lightcurve.css */
+
+
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #15143a;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+
+
+     /* Primeiro passo: definir um degradê como fundo 
+    background-image: linear-gradient(to bottom, #05006a, rgb(232, 232, 241), rgb(228, 228, 231));*/
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+    
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: rgb(244, 244, 244);
+}
+
+.intro-text {
+    text-align: justify;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    color: #b0c7d4;
+}
+
+.form-analysis {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-analysis label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #ee8f00;
+}
+
+.form-analysis input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ee8f00;
+ /* Primeiro passo: definir um degradê como fundo 
+    background-image: linear-gradient(to bottom, #05006a, rgb(232, 232, 241), rgb(228, 228, 231));*/
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+    
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: rgb(244, 244, 244);
+
+}
+
+.form-analysis button {
+    background-color: #ee8f00;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-analysis button:hover {
+    background-color: #ffa012;
+}
+
+#progress-bar {
+    width: 100%;
+    
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+}
+
+
+#progress-bar-fill {
+    height: 20px;
+    width: 0;
+    background-color: #ee8f00;
+    transition: width 0.4s ease;
+}
+
+.result-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.result-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.result-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #ee8f00;
+    border-radius: 5px;
+}
+
+.btn-download {
+    background-color: #ee8f00;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-download:hover {
+    background-color: #ffa114;
+}
+
+.examples-section {
+    margin-top: 50px;
+}
+
+.examples-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+    
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: rgb(244, 244, 244);
+}
+
+.example {
+    margin-bottom: 40px;
+}
+
+.example h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    
+    background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
+
+    /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    
+    /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+    -webkit-text-fill-color: transparent;
+    
+    /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+    color: rgb(244, 244, 244);
+}
+
+.example-images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.example-images img {
+    max-width: 45%;
+    border: 2px solid #ee8f00;
+    border-radius: 5px;
+}
+
+.example p {
+    font-size: 1.2rem;
+    color: #b0c7d4;
+    line-height: 1.5;
+}

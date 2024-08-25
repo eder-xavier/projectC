@@ -1,0 +1,147 @@
+
+/* base.css */
+
+@font-face {
+    font-family: 'san francisco';
+    src: url('../../fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF');
+ }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'san francisco';
+    color: white;
+    background: linear-gradient(to bottom, #02000c, #030013, #030012, #02001a, #030012);
+    overflow-x: hidden;
+    
+}
+
+.meteor-bg {
+    
+    /*background: linear-gradient(to bottom, #001a4d, #003366, #004080, #0059b3, #0073e6);*/
+    background: linear-gradient(to bottom, #02000c, #030013, #030012, #02001a, #030012);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #02000c, #030013, #030012, #02001a, #030012);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    color: #ffdd57;
+}
+
+
+.meteor {
+    
+    position: absolute;
+    top: 10vh;
+    left: 1vw;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(white, rgba(255, 255, 255, 0));
+    opacity: 0.7;
+    animation: fall 5s linear infinite;
+    transform: rotate(1deg); /* Inclinação para simular a queda diagonal */
+}
+
+
+.footer-base {
+    width: 100%;
+    color: #fff;
+    display: fixed;
+    bottom: 100vh;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    margin: 0 auto;
+    background: rgba(44, 39, 65, 0.649);
+}
+
+
+/* Estilo global para scrollbar */
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #02000c, #030013, #030012, #02001a, #030012);
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.264);
+    border-radius: 10px; 
+    border: 2px solid #00002f; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.453);
+    cursor: pointer;
+}
+
+
+.scrollbar {
+    scrollbar-width: thin; /* Largura fina da barra */
+    scrollbar-color: #e5e6ff #00002f; 
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #02000c, #030013, #030012, #02001a, #030012);
+    border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.264);
+    border-radius: 10px;
+    border: 2px solid #00002f;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.453);
+    cursor: pointer;
+}
+
+
+
+
+@keyframes fall {
+    from {
+        transform: translateY(-150vh) translateX(-100vw) rotate(-45deg);
+    }
+    to {
+        transform: translateY(100vh) translateX(100vw) rotate(-45deg);
+    }
+}
+
+ 
