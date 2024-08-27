@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <div class="content-wrapper">
+    <main class="content-wrapper">
         <h1 class="page-title">Descubra Possíveis Candidatos a Exoplanetas</h1>
 
         <form id="kepler-form" class="form-analysis">
@@ -66,7 +66,9 @@
             <br>
             <br>
             É válido ressaltar que nossa plataforma ainda está em fase de aprimoramento, estão há uma quantidade
-            considerável de objetos que atualmente ainda não conseguem ser processados corretamente.
+            considerável de objetos que atualmente ainda não conseguem ser processados corretamente. além disso,
+            é recomendável permanecer na página enquando a solicitação estiver sendo processada, também como
+            atualizar a página se resolver analisar dois objetos em sequência.
         </p>
 
 
@@ -100,7 +102,7 @@
                     Essas quedas, bem maiores do que 1%,
                     (nos exemplos chegando a aproximadamente 50% de diminuição no brilho da estrela alvo),
                     indicam que um objeto grande em relação ao objeto alvo, possivelmente uma estrela,
-                    que está transitando regularmente em frente a outra.
+                    está transitando regularmente em frente a outra.
                 </p>
             </div>
 
@@ -118,7 +120,8 @@
 
             
         </div>
-    </div>
+
+    </main>
 
     <script>
         $(document).ready(function(){
@@ -131,7 +134,7 @@
                 $('#download-btn').hide();
                 
                 const interval = setInterval(function() {
-                    const width = $('#progress-bar-fill').width() + 2;
+                    const width = $('#progress-bar-fill').width() + 1.5;
                     $('#progress-bar-fill').css('width', width + 'px');
                 }, 100);
 
