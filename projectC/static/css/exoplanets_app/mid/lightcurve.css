@@ -34,7 +34,7 @@
 
 .intro-text {
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 18px;
     margin-bottom: 40px;
     line-height: 1.5;
     color: #b0c7d4;
@@ -57,6 +57,7 @@
     width: 250px;
     border-radius: 5px;
     border: 1px solid #ee8f00;
+    box-shadow: 0 0 6px rgba(255, 221, 87, 0.5);
  /* Primeiro passo: definir um degradê como fundo 
     background-image: linear-gradient(to bottom, #05006a, rgb(232, 232, 241), rgb(228, 228, 231));*/
     background-image: linear-gradient(to bottom, rebeccapurple, rgb(156, 102, 210), rgb(236, 236, 236),  rgb(238, 238, 241));
@@ -85,6 +86,10 @@
 
 .form-analysis button:hover {
     background-color: #ffa012;
+}
+
+.examples_txt{
+    text-align: justify;
 }
 
 #progress-bar {

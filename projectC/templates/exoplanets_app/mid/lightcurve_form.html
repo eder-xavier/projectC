@@ -16,26 +16,7 @@
 
     <div class="content-wrapper">
         <h1 class="page-title">Descubra Possíveis Candidatos a Exoplanetas</h1>
-        <p class="intro-text">
-            Utilizando o método de trânsito fotométrico, este sistema analisa a
-            curva de luz de estrelas observadas pelo telescópio Kepler. Durante o trânsito,
-            quando um exoplaneta passa em frente à sua estrela, ocorre uma diminuição perceptível
-            no brilho observado da estrela. Essa variação cria um padrão característico
-            na curva de luz, que pode indicar a presença de um exoplaneta.
-            <br>
-            <br>
-            Além de identificar esses trânsitos, nosso sistema também estima
-            o período orbital da estrela. O período é o tempo que a estrela leva para completar
-            uma órbita ao redor de seu centro de massa. A estimativa do período é crucial, pois permite prever
-            quando o próximo trânsito ocorrerá, facilitando a observação e a confirmação da presença do exoplaneta.
-            Conhecer o período também é fundamental para determinar as propriedades orbitais do exoplaneta,
-            como a distância média da estrela, o que ajuda a compreender melhor a dinâmica do sistema estelar e a
-            possibilidade de condições que possam suportar vida.
-            <br>
-            <br>
-            É válido ressaltar que nossa plataforma ainda está em fase de aprimoramento, estão há uma quantidade
-            considerável de objetos que atualmente ainda não conseguem ser processados corretamente.
-        </p>
+
         <form id="kepler-form" class="form-analysis">
             <label for="kepler_id">Kepler ID:</label>
             <input type="text" id="kepler_id" name="kepler_id" required placeholder="Ex: 10544976">
@@ -58,6 +39,37 @@
             
         </div>
 
+        <p class="intro-text">
+            Utilizando o método de trânsito fotométrico, este sistema analisa a
+            curva de luz de estrelas observadas pelo telescópio espacial Kepler.
+            Durante o trânsito, quando um exoplaneta passa em frente à sua estrela,
+            ocorre uma diminuição perceptível no brilho observado da estrela.
+            Essa variação cria um padrão característico
+            na curva de luz, que pode indicar a presença de um exoplaneta.
+            <br>
+            <br>
+            Entretanto, a profundidade de um trânsito planetário geralmente
+            é da ordem de 0,01% a 1% do fluxo total da estrela. Ou seja, se houver casos
+            em que há uma diminuição maior do brilho da estrela, pode se tratar de um trânsito
+            estelar.
+            Em outras palavras, em caso de ser um sistema binário e ser observado o momento de
+            eclipse das duas estrelas.
+            <br>
+            <br>
+            Além de identificar esses trânsitos, nosso sistema também estima
+            o período orbital da estrela. O período é o tempo que a estrela leva para completar
+            uma órbita ao redor de seu centro de massa. A estimativa do período é crucial, pois permite prever
+            quando o próximo trânsito ocorrerá, facilitando a observação e a confirmação da presença do exoplaneta.
+            Conhecer o período também é fundamental para determinar as propriedades orbitais do exoplaneta,
+            como a distância média da estrela, o que ajuda a compreender melhor a dinâmica do sistema estelar e a
+            possibilidade de condições que possam suportar vida.
+            <br>
+            <br>
+            É válido ressaltar que nossa plataforma ainda está em fase de aprimoramento, estão há uma quantidade
+            considerável de objetos que atualmente ainda não conseguem ser processados corretamente.
+        </p>
+
+
         
         
         <div id="examples" class="examples-section">
@@ -65,19 +77,46 @@
             <div class="example">
                 <h3>Casos com Possível Candidato a Exoplaneta:</h3>
                 <div class="example-images">
+                    <img src="{% static 'img/exoplanets_app/mid/graphics/lightcurvePlanet1.png' %}" alt="Curva de luz com candidato a exoplaneta">
+                    <img src="{% static 'img/exoplanets_app/mid/graphics/lightcurvePlanet2.png' %}" alt="Curva de luz com candidato a exoplaneta">
+                </div>
+                <p class="examples_txt">
+                    Nestes exemplos, observe as quedas regulares no brilho da estrela.
+                    Essas quedas indicam que um objeto, no nosso caso um exoplaneta,
+                    está transitando regularmente em frente à estrela. Perceba que o valor que
+                    o fluxo da estrela cai é muito pequeno, menor do que 1%. Agora vamos ver nos
+                    exemplos seguintes...
+                </p>
+            </div>
+
+            <div class="example">
+                <h3>Casos com Sistema Binário:</h3>
+                <div class="example-images">
                     <img src="{% static 'img/exoplanets_app/mid/graphics/lightcurveV1.png' %}" alt="Curva de luz com candidato a exoplaneta">
                     <img src="{% static 'img/exoplanets_app/mid/graphics/lightcurveV2.png' %}" alt="Curva de luz com candidato a exoplaneta">
                 </div>
-                <p>Nestes exemplos, observe as quedas regulares no brilho da estrela. Essas quedas indicam que um objeto, possivelmente um exoplaneta, está transitando regularmente em frente à estrela.</p>
+                <p class="examples_txt">
+                    Nestes exemplos, observe as quedas profundas no brilho da estrela.
+                    Essas quedas, bem maiores do que 1%,
+                    (nos exemplos chegando a aproximadamente 50% de diminuição no brilho da estrela alvo),
+                    indicam que um objeto grande em relação ao objeto alvo, possivelmente uma estrela,
+                    que está transitando regularmente em frente a outra.
+                </p>
             </div>
+
             <div class="example">
                 <h3>Casos sem Candidato a Exoplaneta:</h3>
                 <div class="example-images">
                     <img src="{% static 'img/exoplanets_app/mid/graphics/lightcurveVN1.png' %}" alt="Curva de luz sem candidato a exoplaneta">
                     <img src="{% static 'img/exoplanets_app/mid/graphics/lightcurveVN2.png' %}" alt="Curva de luz sem candidato a exoplaneta">
                 </div>
-                <p>Nestes exemplos, a curva de luz é bastante estável ou cíclica, sem quedas significativas que indiquem a presença de um exoplaneta.</p>
+                <p class="examples_txt">
+                    Nestes exemplos, a curva de luz é bastante estável ou cíclica,
+                    sem quedas significativas que indiquem a presença de um exoplaneta.
+                </p>
             </div>
+
+            
         </div>
     </div>
 
