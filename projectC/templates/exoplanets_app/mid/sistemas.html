@@ -16,22 +16,51 @@
     <main class="main_sistemas"> 
     <section class="sistema_container">
         <p>
-            Para encontrar dados sobre sistemas binários e identificar sistemas específicos usando dados do telescópio Kepler, você pode usar o
-            <a href="https://archive.stsci.edu/kepler/eclipsing_binaries.html" target="_blank">Kepler Vila Nova</a>. Siga as instruções abaixo para procurar identificadores de sistemas binários:
+            Para encontrar dados sobre sistemas binários e identificar sistemas específicos usando dados do telescópio Kepler,
+            você pode usar o
+            <a href="https://archive.stsci.edu/kepler/planet_candidates.html" target="_blank">
+                Catalogo oficial de dados do kepler
+            </a>. 
+            Observe a coluna Kepler_id e escolha um desses objetos.
         </p>
-        <ol>
-            <li>
-                Observe a coluna Kepler_id e Escolha um desses objetos.
-            </li>
-            
-        </ol>
+
+        <p>
+            No entanto, é válido ressaltar que nosso programa está passando por algumas instabilidades e uma quantidade
+            significativa de objetos não estão sendo processados corretamente. Por isso disponibilizamos uma pequena tabela
+            com alguns identificadores no final desta página.
+        </p>
+
         <p>
             Agora com o identificador em mãos, o proximo passo será Buscar Dados da Curva de Luz
             O sistema busca as curvas de luz associadas ao identificador fornecido.
             Esses dados mostram a variação no brilho do sistema ao longo do tempo.
         </p>
-        <p><a href="{% url 'exoplanets_app:lightcurve_analysis' %}">Analisar Curva de luz</a></p>
+
+        <p>
+            <a href="{% url 'exoplanets_app:lightcurve_analysis' %}">Analisar Curva de luz</a>
+        </p>
     </section>
+
+    <table>
+        <Thead>
+            <tr>
+                <th>
+                    Identificadores Kepler
+                </th>
+            </tr>
+        </Thead>
+        <tbody>
+
+            <tr><td>Kepler 2</td></tr>
+            <tr><td>KOI- 12</td></tr>
+            <tr><td>2708156</td></tr>
+            <tr><td>10544976</td></tr>
+            <tr><td>11122789</td></tr>
+            <tr><td>12268220</td></tr>
+
+        </tbody>
+        
+    </table>
 
     </main>
 
