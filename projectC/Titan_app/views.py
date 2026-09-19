@@ -23,6 +23,9 @@ def award_articles(request):
 def team(request):
     return render(request, 'titan/mid/team.html')
 
+def team_paolo_oliveira(request):
+    return render(request, 'titan/mid/team_paolo_oliveira.html')
+
 #def registration_code(request):
 #    if request.method == 'POST':
 #        form = RegistrationCodeForm(request.POST)

@@ -12,6 +12,7 @@ urlpatterns = [
     path('extensoes/', views.extensions,  name='extensions'),
     path('award_articles/', views.award_articles,  name='award_articles'),
     path('team/', views.team, name='team'),
+    path('team/paolo.oliveira/', views.team_paolo_oliveira, name='team_paolo_oliveira'),
     #path('noticias/', views.public_news, name='news'),
 #
     #path('signup/', views.signup, name='signup'),

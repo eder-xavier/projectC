@@ -1,0 +1,39 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Titan</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/team.css' %}">
+</head>
+<body>
+        <h1 class="h1team">JOÃO PAOLO CAVALCANTE MARTINS OLIVEIRA</h1>
+        <section class="section-team">
+            <img class='imageteam' src="{% static 'img/titan/mid/imagePaolo.jpg' %}">
+            <div class="team-info">
+                <p class="descricao">Mestrando em Engenharia Aeroespacial pela  Universidade Federal do Rio Grande do Norte (UFRN), possui experiência em Aprendizagem de Máquina, Sistemas Embarcados, Cubesats, Astrofísica e Radioastronomia. É, tambem, parte do SETI Instute, usando Aprendizado de Máquina em sinais de Radiotelescópio para busca de vida.</p>
+                <div class="profile-buttons">
+                    <a href="http://lattes.cnpq.br/9568528178482838" target="_blank">
+                        <button class="buttoncv">CV Lattes</button>
+                    </a>
+                    <a href="https://scholar.google.com.br/citations?user=gaUnn5oAAAAJ" target="_blank">
+                        <button class="buttoncv">Google Scholar</button>
+                    </a>
+                    <a href="https://orcid.org/0000-0003-4117-953X" target="_blank">
+                        <button class="buttoncv">ORCID</button>
+                    </a>
+                    <a href="https://paoloo.github.io" target="_blank">
+                        <button class="buttoncv">Site Pessoal</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="publications-container">
+            <iframe class="publications-iframe" src="https://paoloo.github.io/publications/" title="Publicações"></iframe>
+        </div>
+</body>
+</html>
+{% endblock %}
