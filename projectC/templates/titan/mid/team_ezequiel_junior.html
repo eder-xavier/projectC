@@ -1,0 +1,28 @@
+{% extends 'titan/home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezequiel Amador Soares Junior | TITAN</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/titan/mid/team.css' %}">
+</head>
+<body>
+        <h1 class="h1team">EZEQUIEL AMADOR SOARES JUNIOR</h1>
+        <section class="section-team">
+            <img class='imageteam' src="{% static 'img/titan/mid/imageEzequielJunior.png' %}" alt="Ezequiel Amador Soares Junior">
+            <div class="team-info">
+                <p class="descricao">Graduando em Engenharia de Computação pela Universidade Federal do Rio Grande do Norte (UFRN) e pesquisador do TITAN. Desenvolve trabalhos com Cefeidas, com foco no ajuste da relação período-luminosidade por meio da metalicidade.</p>
+                <p class="descricao">Recebeu o prêmio CICT-UFRN por uma de suas pesquisas. Também atua nas áreas de Engenharia de Dados, Ciência de Dados e desenvolvimento full stack, contribuindo para a aplicação de métodos computacionais à pesquisa em Astrofísica.</p>
+                <div class="profile-buttons">
+                    <a href="http://lattes.cnpq.br/0720414684341743" target="_blank" rel="noopener noreferrer">
+                        <button class="buttoncv">CV Lattes</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+</body>
+</html>
+{% endblock %}

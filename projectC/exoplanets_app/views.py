@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-import lightkurve as lk
 import base64
-import matplotlib.pyplot as plt
-import numpy as np
 import logging
 from io import BytesIO
 
@@ -24,6 +21,9 @@ def detection_methods(request):
 
 def lightcurve_analysis(request):
     if request.method == 'POST':
+        import lightkurve as lk
+        import matplotlib.pyplot as plt
+
         kepler_id = None
         pixelfile = None
         lc = None

@@ -26,6 +26,9 @@ def team(request):
 def team_paolo_oliveira(request):
     return render(request, 'titan/mid/team_paolo_oliveira.html')
 
+def team_ezequiel_junior(request):
+    return render(request, 'titan/mid/team_ezequiel_junior.html')
+
 #def registration_code(request):
 #    if request.method == 'POST':
 #        form = RegistrationCodeForm(request.POST)
